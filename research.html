@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Research publications, preprints, academic interests, and lab computing details of Malinda Lakshan. Explore current studies on deep learning models.">
+  <meta name="author" content="Malinda Lakshan">
+  <title>Research | Malinda Lakshan</title>
+  
+  <!-- CSS files -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/effects.css">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Background Canvas -->
+  <canvas id="network-canvas" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: all; z-index: 1;"></canvas>
+
+  <!-- Glowing blobs for background layout -->
+  <div class="hero-glow-blob"></div>
+  <div class="hero-glow-blob-2"></div>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo" id="header-logo">
+        <span class="logo-text">MALINDA LAKSHAN</span><span class="logo-dot"></span>
+      </a>
+      <button class="hamburger" id="nav-toggle" aria-label="Toggle Navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="index.html">Home</a></li>
+        <li class="nav-item"><a href="about.html">About</a></li>
+        <li class="nav-item active"><a href="research.html">Research</a></li>
+        <li class="nav-item"><a href="projects.html">Projects</a></li>
+        <li class="nav-item"><a href="contact.html">Contact</a></li>
+        <li class="nav-item" style="list-style: none;">
+          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+            <i class="fa-solid fa-sun icon-sun"></i>
+            <i class="fa-solid fa-moon icon-moon"></i>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main style="z-index: 2; position: relative;">
+    <!-- Research Heading -->
+    <section>
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 4rem;">
+          <h2>Research Work</h2>
+          <p style="max-width: 600px; margin: 1rem auto 0 auto;" class="reveal">
+            Exploring philosophy, logic, and the intersection of technology with traditional knowledge.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Buddhism Research Section -->
+    <section style="background-color: var(--section-alt-bg); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 4rem;">
+          <h2>Current Research</h2>
+        </div>
+
+        <div class="grid-2 reveal">
+          <div style="display: flex; flex-direction: column; justify-content: center; gap: 1.5rem;">
+            <h3 style="color: var(--accent-cyan);">Buddhist Philosophy & Logic</h3>
+            <p>
+              I am currently engaged in an independent study of Buddhist philosophy, with a focus on its logical structures, epistemological frameworks, and the intersection of Eastern thought with modern cognitive science.
+            </p>
+            <p>
+              This research explores concepts such as causality (<em>paticca-samuppada</em>), phenomenology of mind (<em>citta</em>), and the analytical methods found in Abhidhamma literature. I am particularly interested in how these ancient frameworks of logic and reasoning can offer new perspectives on contemporary questions in philosophy of mind and artificial intelligence.
+            </p>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+            <div class="glass-card" style="padding: 1.5rem; text-align: center;">
+              <div style="font-size: 2rem; color: var(--accent-cyan); margin-bottom: 1rem;"><i class="fa-solid fa-dharmachakra"></i></div>
+              <h4 style="color: #ffffff; margin-bottom: 0.5rem; font-size: 1rem;">Logic & Epistemology</h4>
+              <p style="font-size: 0.85rem;">Studying Buddhist logic, reasoning methods, and theories of knowledge.</p>
+            </div>
+            
+            <div class="glass-card" style="padding: 1.5rem; text-align: center;">
+              <div style="font-size: 2rem; color: var(--accent-purple); margin-bottom: 1rem;"><i class="fa-solid fa-brain"></i></div>
+              <h4 style="color: #ffffff; margin-bottom: 0.5rem; font-size: 1rem;">Philosophy of Mind</h4>
+              <p style="font-size: 0.85rem;">Exploring consciousness, perception, and mental phenomena through Buddhist texts.</p>
+            </div>
+            
+            <div class="glass-card" style="padding: 1.5rem; text-align: center;">
+              <div style="font-size: 2rem; color: var(--accent-purple); margin-bottom: 1rem;"><i class="fa-solid fa-leaf"></i></div>
+              <h4 style="color: #ffffff; margin-bottom: 0.5rem; font-size: 1rem;">Ethics & Causality</h4>
+              <p style="font-size: 0.85rem;">Understanding causal relationships and ethical frameworks in Buddhist thought.</p>
+            </div>
+            
+            <div class="glass-card" style="padding: 1.5rem; text-align: center;">
+              <div style="font-size: 2rem; color: var(--accent-cyan); margin-bottom: 1rem;"><i class="fa-solid fa-book-open"></i></div>
+              <h4 style="color: #ffffff; margin-bottom: 0.5rem; font-size: 1rem;">Textual Analysis</h4>
+              <p style="font-size: 0.85rem;">Reading and interpreting Pali canon and commentaries on Buddhist doctrine.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Future Research Section -->
+    <section>
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 3rem;">
+          <h2>Future Directions</h2>
+          <p style="max-width: 600px; margin: 1rem auto 0 auto;" class="reveal">
+            I am at the beginning of my research journey. These are areas I plan to explore further.
+          </p>
+        </div>
+
+        <div class="grid-3 reveal">
+          <div class="glass-card" style="text-align: left; padding: 2rem;">
+            <div style="font-size: 2rem; color: var(--accent-cyan); margin-bottom: 1rem;"><i class="fa-solid fa-robot"></i></div>
+            <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;">AI & Machine Learning</h3>
+            <p style="font-size: 0.95rem;">
+              Exploring machine learning algorithms, model architectures, and their practical applications in real-world problem-solving.
+            </p>
+          </div>
+          
+          <div class="glass-card" style="text-align: left; padding: 2rem;">
+            <div style="font-size: 2rem; color: var(--accent-purple); margin-bottom: 1rem;"><i class="fa-solid fa-message"></i></div>
+            <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;">LLMs & NLP</h3>
+            <p style="font-size: 0.95rem;">
+              Studying large language models, natural language processing techniques, and how language understanding systems work under the hood.
+            </p>
+          </div>
+          
+          <div class="glass-card" style="text-align: left; padding: 2rem;">
+            <div style="font-size: 2rem; color: var(--accent-cyan); margin-bottom: 1rem;"><i class="fa-solid fa-network-wired"></i></div>
+            <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;">Networking</h3>
+            <p style="font-size: 0.95rem;">
+              Learning computer networking fundamentals, protocols, and how data flows across distributed systems and the internet.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <a href="index.html" class="logo footer-logo">
+            <span class="logo-text">MALINDA LAKSHAN</span><span class="logo-dot"></span>
+          </a>
+          <p class="footer-desc">
+            AI student and researcher specialized in deep learning, neural network engineering, and autonomous architectures.
+          </p>
+          <div class="footer-socials">
+            <a href="https://github.com/malindalakshan-git" class="social-icon" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/malinda-lakshan-80937a413/" class="social-icon" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="mailto:malindalakshanbro@gmail.com" class="social-icon" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
+          </div>
+        </div>
+        
+        <div>
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="research.html">Research Work</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact Nodes</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-heading">Core Areas</h4>
+          <ul class="footer-links">
+            <li><a href="research.html#transformer-networks">Transformer Nets</a></li>
+            <li><a href="research.html#computer-vision">Computer Vision</a></li>
+            <li><a href="projects.html#neuro-sim">NeuroSim Platform</a></li>
+            <li><a href="projects.html#cognitive-bot">Cognitive Agent</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-subscribe">
+          <h4 class="footer-heading">Node Connection</h4>
+          <p>Subscribe to receive updates on my recent publications and code releases.</p>
+          <form class="subscribe-form" onsubmit="event.preventDefault(); alert('Subscribed to mail server node successfully!')">
+            <input type="email" placeholder="node@domain.com" class="subscribe-input" required aria-label="Email Address">
+            <button type="submit" class="subscribe-btn" aria-label="Submit Subscription"><i class="fa-solid fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Malinda Lakshan. All rights reserved. Designed for cutting-edge AI environments.
+        </div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="#">Privacy Protocol</a>
+          <a href="#">Terms of Access</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/network.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Official portfolio of Malinda Lakshan, an AI student and deep learning researcher pushing the boundaries of Artificial Intelligence, neural network optimization, and computer vision.">
+  <meta name="author" content="Malinda Lakshan">
+  <title>Malinda Lakshan | AI Researcher & Student Portfolio</title>
+  
+  <!-- CSS files -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/effects.css">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Background Canvas -->
+  <canvas id="network-canvas" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: all; z-index: 1;"></canvas>
+
+  <!-- Glowing blobs for background layout -->
+  <div class="hero-glow-blob"></div>
+  <div class="hero-glow-blob-2"></div>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo" id="header-logo">
+        <span class="logo-text">MALINDA LAKSHAN</span><span class="logo-dot"></span>
+      </a>
+      <button class="hamburger" id="nav-toggle" aria-label="Toggle Navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-menu">
+        <li class="nav-item active"><a href="index.html">Home</a></li>
+        <li class="nav-item"><a href="about.html">About</a></li>
+        <li class="nav-item"><a href="research.html">Research</a></li>
+        <li class="nav-item"><a href="projects.html">Projects</a></li>
+        <li class="nav-item"><a href="contact.html">Contact</a></li>
+        
+        <li class="nav-item" style="list-style: none;">
+          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+            <i class="fa-solid fa-sun icon-sun"></i>
+            <i class="fa-solid fa-moon icon-moon"></i>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section" style="min-height: calc(100vh - var(--nav-height)); display: flex; align-items: center; padding: 2rem 0; z-index: 2;">
+      <div class="container">
+        <div class="grid-2">
+          <div class="hero-info" style="display: flex; flex-direction: column; justify-content: center; gap: 1.5rem;">
+            <h1 class="glow-text">Malinda Lakshan</h1>
+            <h3 style="font-weight: 500; font-family: var(--font-body); color: var(--text-primary); display: flex; align-items: center;">
+              I am a&nbsp;<span class="typing-text" style="color: var(--accent-cyan); font-weight: 700;"></span><span class="typing-cursor">|</span>
+            </h3>
+            <p style="font-size: 1.15rem; max-width: 500px; color: var(--text-secondary);">
+              Deep learning researcher and academic student focused on artificial intelligence, neural network optimization, computer vision networks, and agentic cognitive systems.
+            </p>
+            <div style="display: flex; gap: 1.5rem; margin-top: 1rem;">
+              <a href="research.html" class="btn btn-primary" id="cta-explore">
+                Explore Research <i class="fa-solid fa-arrow-right"></i>
+              </a>
+              <a href="contact.html" class="btn btn-secondary" id="cta-contact">
+                Get In Touch
+              </a>
+            </div>
+          </div>
+          
+          <!-- Right column - Profile Image -->
+          <div class="reveal delay-200" style="display: flex; align-items: center; justify-content: center;">
+            <div class="portfolio-img-wrapper glow-border hero-image">
+              <img src="assets/malinda.jpg" alt="Malinda Lakshan Portrait">
+              <div class="portfolio-img-glow-overlay"></div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Fields Section -->
+    <section id="features" style="background-color: var(--section-alt-bg); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 4rem;">
+          <h2 class="reveal">Expertise & Focus</h2>
+          <p style="max-width: 600px; margin: 1rem auto 0 auto;" class="reveal delay-100">
+            Applying advanced deep learning frameworks and computational architectures to resolve complex research hypotheses.
+          </p>
+        </div>
+        
+        <div class="grid-3">
+          <div class="glass-card reveal" id="field-deep-learning">
+            <div style="font-size: 2.5rem; color: var(--accent-cyan); margin-bottom: 1.5rem;">
+              <i class="fa-solid fa-brain"></i>
+            </div>
+            <h3>Neural Network Architectures</h3>
+            <p>
+              Designing and implementing custom model layers, attention mechanisms, and graph structures to improve computational efficiency.
+            </p>
+          </div>
+          
+          <div class="glass-card reveal delay-100" id="field-computer-vision">
+            <div style="font-size: 2.5rem; color: var(--accent-purple); margin-bottom: 1.5rem;">
+              <i class="fa-solid fa-eye"></i>
+            </div>
+            <h3>Computer Vision</h3>
+            <p>
+              Developing robust spatial filters, deep convolutional models, and multi-object tracking pipelines for real-world environmental awareness.
+            </p>
+          </div>
+          
+          <div class="glass-card reveal delay-200" id="field-agentic-systems">
+            <div style="font-size: 2.5rem; color: var(--accent-cyan); margin-bottom: 1.5rem;">
+              <i class="fa-solid fa-robot"></i>
+            </div>
+            <h3>Autonomous Agents</h3>
+            <p>
+              Structuring robust decision pipelines, reinforcement learning environments, and memory storage retrieval mechanics for LLM agents.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <a href="index.html" class="logo footer-logo">
+            <span class="logo-text">MALINDA LAKSHAN</span><span class="logo-dot"></span>
+          </a>
+          <p class="footer-desc">
+            AI student and researcher specialized in deep learning, neural network engineering, and autonomous architectures.
+          </p>
+          <div class="footer-socials">
+            <a href="https://github.com/malindalakshan-git" class="social-icon" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/malinda-lakshan-80937a413/" class="social-icon" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="mailto:malindalakshanbro@gmail.com" class="social-icon" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
+          </div>
+        </div>
+        
+        <div>
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="research.html">Research Work</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact Nodes</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-heading">Core Areas</h4>
+          <ul class="footer-links">
+            <li><a href="research.html#transformer-networks">Transformer Nets</a></li>
+            <li><a href="research.html#computer-vision">Computer Vision</a></li>
+            <li><a href="projects.html#neuro-sim">NeuroSim Platform</a></li>
+            <li><a href="projects.html#cognitive-bot">Cognitive Agent</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-subscribe">
+          <h4 class="footer-heading">Node Connection</h4>
+          <p>Subscribe to receive updates on my recent publications and code releases.</p>
+          <form class="subscribe-form" onsubmit="event.preventDefault(); alert('Subscribed to mail server node successfully!')">
+            <input type="email" placeholder="node@domain.com" class="subscribe-input" required aria-label="Email Address">
+            <button type="submit" class="subscribe-btn" aria-label="Submit Subscription"><i class="fa-solid fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Malinda Lakshan. All rights reserved. Designed for cutting-edge AI environments.
+        </div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="#">Privacy Protocol</a>
+          <a href="#">Terms of Access</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/network.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

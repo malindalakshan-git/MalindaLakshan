@@ -1,0 +1,38 @@
+[
+    {
+        "id": "intro-to-ml",
+        "title": "Introduction to Machine Learning",
+        "description": "A foundational guide covering supervised and unsupervised learning, model evaluation, and core algorithms.",
+        "fileName": "intro-to-ml.pdf",
+        "fileSize": "3.2 MB",
+        "addedDate": "2026-01-15",
+        "category": "AI & Machine Learning"
+    },
+    {
+        "id": "deep-learning-notes",
+        "title": "Deep Learning Fundamentals",
+        "description": "Comprehensive notes on neural network architectures, backpropagation, activation functions, and optimization techniques.",
+        "fileName": "deep-learning-notes.pdf",
+        "fileSize": "5.8 MB",
+        "addedDate": "2026-02-20",
+        "category": "Deep Learning"
+    },
+    {
+        "id": "linear-algebra-ai",
+        "title": "Linear Algebra for AI",
+        "description": "Essential mathematical foundations including matrix operations, eigenvectors, SVD, and their applications in ML.",
+        "fileName": "linear-algebra-ai.pdf",
+        "fileSize": "2.1 MB",
+        "addedDate": "2026-03-10",
+        "category": "Mathematics"
+    },
+    {
+        "id": "1781335263922-Reported_Speech_Seminar",
+        "title": "malinda",
+        "description": "",
+        "fileName": "1781335263922-Reported_Speech_Seminar.pdf",
+        "fileSize": "0.1 MB",
+        "addedDate": "2026-06-13",
+        "category": "Uncategorized"
+    }
+]

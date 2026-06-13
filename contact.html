@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get in touch with Malinda Lakshan for AI collaborations, research inquiries, or code questions. Send an encrypted message node.">
+  <meta name="author" content="Malinda Lakshan">
+  <title>Contact | Malinda Lakshan</title>
+  
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/effects.css">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <canvas id="network-canvas" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: all; z-index: 1;"></canvas>
+
+  <div class="hero-glow-blob"></div>
+  <div class="hero-glow-blob-2"></div>
+
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo" id="header-logo">
+        <span class="logo-text">MALINDA LAKSHAN</span><span class="logo-dot"></span>
+      </a>
+      <button class="hamburger" id="nav-toggle" aria-label="Toggle Navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="index.html">Home</a></li>
+        <li class="nav-item"><a href="about.html">About</a></li>
+        <li class="nav-item"><a href="research.html">Research</a></li>
+        <li class="nav-item"><a href="projects.html">Projects</a></li>
+        <li class="nav-item active"><a href="contact.html">Contact</a></li>
+        <li class="nav-item" style="list-style: none;">
+          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+            <i class="fa-solid fa-sun icon-sun"></i>
+            <i class="fa-solid fa-moon icon-moon"></i>  
+          </button>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <main style="z-index: 2; position: relative;">
+    <section style="min-height: calc(100vh - var(--nav-height) - 300px); display: flex; align-items: center; padding: 2rem 0;">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 4rem;">
+          <h2>Connect Me</h2>
+          <p style="max-width: 600px; margin: 1rem auto 0 auto;" class="reveal">
+            Transmit encrypted message packets directly to my computational database or establish contact via traditional channels.
+          </p>
+        </div>
+
+        <div style="display: flex; gap: 2rem; width: 100%; flex-wrap: wrap; align-items: flex-start;">
+          
+          <div class="reveal" style="flex: 1; min-width: 320px; display: flex; flex-direction: column; gap: 1.5rem;">
+            <h3 style="color: var(--accent-cyan); margin-bottom: 0.5rem;">Contact Information</h3>
+            
+            <div class="glass-card" style="padding: 1.5rem; display: flex; gap: 1.5rem; align-items: center;" id="vector-email">
+              <div style="font-size: 1.8rem; color: var(--accent-cyan); width: 50px; text-align: center;">
+                <i class="fa-regular fa-envelope"></i>
+              </div>
+              <div>
+                <h4 style="margin-bottom: 0.2rem; font-size: 1rem;">Email</h4>
+                <a href="mailto:malindalakshanbro@gmail.com" style="color: var(--accent-cyan); font-weight: 500;">malindalakshanbro@gmail.com</a>
+              </div>
+            </div>
+
+            <div class="glass-card" style="padding: 1.5rem; display: flex; gap: 1.5rem; align-items: center;" id="vector-whatsapp">
+              <div style="font-size: 1.8rem; color: var(--accent-cyan); width: 50px; text-align: center;">
+                <i class="fa-brands fa-whatsapp"></i>
+              </div>
+              <div>
+                <h4 style="margin-bottom: 0.2rem; font-size: 1rem;">WhatsApp</h4>
+                 <a href="https://wa.me/94741044692" target="_blank" style="color: var(--accent-cyan); font-weight: 500;">+94 74 10 44 692</a>
+              </div>
+            </div>
+        
+            <div class="glass-card" style="padding: 1.5rem; display: flex; gap: 1.5rem; align-items: center;" id="vector-networks">
+              <div style="font-size: 1.8rem; color: #e60000; width: 50px; text-align: center;">
+                <i class="fa-solid fa-code"></i>
+              </div>
+              <div>
+                <h4 style="margin-bottom: 0.5rem; font-size: 1rem;">Scientific Networks </h4>
+                <div style="display: flex; gap: 1rem;">
+                  <a href="https://github.com/malindalakshan-git" target="_blank" class="btn btn-secondary" style="padding: 0.4rem 0.8rem; font-size: 0.8rem; border-radius: 4px; gap: 5px; text-decoration: none;">
+                    <i class="fa-brands fa-github"></i> GitHub
+                  </a>
+                  <a href="https://www.linkedin.com/in/malinda-lakshan-80937a413/" target="_blank" class="btn btn-secondary" style="padding: 0.4rem 0.8rem; font-size: 0.8rem; border-radius: 4px; gap: 5px; text-decoration: none;">
+                    <i class="fa-brands fa-linkedin-in"></i> LinkedIn
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="glass-card" style="padding: 1.5rem; display: flex; gap: 1.5rem; align-items: center;" id="vector-youtube">
+              <div style="font-size: 1.8rem; color: #ff0000; width: 50px; text-align: center;">
+                  <i class="fa-brands fa-youtube"></i> 
+              </div>
+              <div>
+                <h4 style="margin-bottom: 0.2rem; font-size: 1rem;">YouTube</h4>
+                <a href="https://www.youtube.com/@Malindalakshan-q8s" target="_blank" style="color: var(--text-secondary); text-decoration: none; font-weight: 500; transition: color 0.2s;" onmouseover="this.style.color='var(--accent-cyan)'" onmouseout="this.style.color='var(--text-secondary)'">
+                  <a href="https://www.youtube.com/@Malindalakshan-q8s" target="_blank" style="color: #ff0000; text-decoration: none; font-weight: 500; transition: color 0.2s;" onmouseover="this.style.color='var(--accent-cyan)'" onmouseout="this.style.color='#ff0000'">
+                    Malinda Lakshan
+                  </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal delay-200" style="flex: 1; min-width: 320px; position: relative;">
+            
+            <div class="terminal-overlay" id="terminal-overlay">
+              <div class="terminal-window">
+                <div class="terminal-header">
+                  <div class="terminal-dot-control red"></div>
+                  <div class="terminal-dot-control yellow"></div>
+                  <div class="terminal-dot-control green"></div>
+                  <span style="font-family: monospace; font-size: 0.75rem; color: var(--text-muted); margin-left: 10px;">mail-streamer.sh</span>
+                </div>
+                <div class="terminal-body" id="terminal-logs">
+                  </div>
+              </div>
+            </div>
+
+            <form class="glass-card" id="contact-form" style="display: flex; flex-direction: column; gap: 1.5rem; padding: 2.5rem;">
+              <h3 style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 8px;">
+                <i class="fa-solid fa-paper-plane" style="color: var(--accent-cyan);"></i> Send your thoughts
+              </h3>
+              
+              <div class="form-group">
+                <input type="text" id="contact-name" class="form-input" placeholder=" " required autocomplete="name">
+                <label for="contact-name" class="form-label">Your Name</label>
+              </div>
+              
+              <div class="form-group">
+                <input type="email" id="contact-email" class="form-input" placeholder=" " required autocomplete="email">
+                <label for="contact-email" class="form-label">Email</label>
+              </div>
+              
+              <div class="form-group" style="margin-bottom: 1.5rem;">
+                <textarea id="contact-message" class="form-input" placeholder=" " required autocomplete="off"></textarea>
+                <label for="contact-message" class="form-label">Message</label>
+              </div>
+              
+              <button type="submit" class="btn btn-primary" id="btn-submit" style="width: 100%; padding: 1rem; cursor: pointer;">
+              Send<i class="fa-regular fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+
+        </div> </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <a href="index.html" class="logo footer-logo">
+            <span class="logo-text">MALINDA LAKSHAN</span><span class="logo-dot"></span>
+          </a>
+          <p class="footer-desc">
+            AI student and researcher specialized in deep learning, neural network engineering, and autonomous architectures.
+          </p>
+          <div class="footer-socials">
+            <a href="https://github.com/malindalakshan-git" class="social-icon" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/malinda-lakshan-80937a413/" class="social-icon" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="mailto:malindalakshanbro@gmail.com" class="social-icon" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
+          </div>
+        </div>
+        
+        <div>
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="research.html">Research Work</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact Nodes</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-heading">Core Areas</h4>
+          <ul class="footer-links">
+            <li><a href="research.html#transformer-networks">Transformer Nets</a></li>
+            <li><a href="research.html#computer-vision">Computer Vision</a></li>
+            <li><a href="projects.html#neuro-sim">NeuroSim Platform</a></li>
+            <li><a href="projects.html#cognitive-bot">Cognitive Agent</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-subscribe">
+  <h4 class="footer-heading">Stay Updated</h4>
+  <p>Subscribe to receive updates on my recent publications and code releases.</p>
+  
+  <form class="subscribe-form" action="https://api.web3forms.com/submit" method="POST">
+    
+    <input type="hidden" name="access_key" value="PASTE_YOUR_ACCESS_KEY_HERE">
+    
+    <input type="hidden" name="subject" value="New Website Newsletter Subscriber!">
+    
+    <input type="email" name="email" placeholder="your.email@gmail.com" class="subscribe-input" required aria-label="Email Address">
+    
+    <button type="submit" class="subscribe-btn" aria-label="Submit Subscription">
+      <i class="fa-solid fa-paper-plane"></i>
+    </button>
+    
+  </form>
+</div>
+      
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Malinda Lakshan. All rights reserved. Designed for cutting-edge AI environments.
+        </div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="#">Privacy Protocol</a>
+          <a href="#">Terms of Access</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/network.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
