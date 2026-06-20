@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Technical portfolio, deep learning systems, computer vision libraries, and open-source packages created by Malinda Lakshan.">
+  <meta name="author" content="Malinda Lakshan">
+  <title>Projects | Malinda Lakshan</title>
+  
+  <!-- CSS files -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/effects.css">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    .project-card-wrapper {
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Canvas -->
+  <canvas id="network-canvas" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: all; z-index: 1;"></canvas>
+
+  <!-- Glowing blobs for background layout -->
+  <div class="hero-glow-blob"></div>
+  <div class="hero-glow-blob-2"></div>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo" id="header-logo">
+        <span class="logo-text">MALINDA LAKSHAN</span><span class="logo-dot"></span>
+      </a>
+      <button class="hamburger" id="nav-toggle" aria-label="Toggle Navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="index.html">Home</a></li>
+        <li class="nav-item"><a href="about.html">About</a></li>
+        <li class="nav-item"><a href="research.html">Research</a></li>
+        <li class="nav-item active"><a href="projects.html">Projects</a></li>
+        <li class="nav-item"><a href="contact.html">Contact</a></li>
+        <li class="nav-item" style="list-style: none;">
+          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+            <i class="fa-solid fa-sun icon-sun"></i>
+            <i class="fa-solid fa-moon icon-moon"></i>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main style="z-index: 2; position: relative;">
+    <section>
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 3rem;">
+          <h2>Technical Projects</h2>
+          <p style="max-width: 600px; margin: 1rem auto 0 auto;" class="reveal">
+            Engineering software utilities, visual simulators, and open-source libraries focused on advanced machine learning.
+          </p>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="portfolio-filter-bar reveal">
+          <button class="filter-btn active" data-filter="all">All Projects</button>
+          <button class="filter-btn" data-filter="SBS">Python</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="project-grid reveal">
+          
+          <!-- Project 1 -->
+          <div class="project-card-wrapper" data-category="SBS" id="School-Bell-System" data-project="school-bell">
+            <div class="glass-card project-card project-card-clickable">
+              <div class="project-click-hint"><i class="fa-solid fa-expand"></i> View Details</div>
+              <div style="font-size: 2.2rem; color: var(--accent-cyan); margin-bottom: 1.2rem;">
+                <i class="fa-regular fa-bell"></i>
+              </div>
+              <h3>School Bell System</h3>
+              <p>
+                An interactive, professional bell system application specially designed for schools. This application has a modern GUI and a better functionality to manage school schedules efficiently.
+              </p>
+              <div class="project-tags">
+                <span class="research-tag"><a href="https://www.python.org/">Python</a></span>
+                <span class="research-tag"><a href="https://docs.python.org/3/library/tkinter.html">Tkinter</a></span>
+                <span class="research-tag"><a href="https://learn.microsoft.com/en-us/windows/">Windows</a> 
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/malindalakshan-git/School-Bell-System" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.85rem;"><i class="fa-brands fa-github"></i> Repository</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <!-- <div class="project-card-wrapper" data-category="nlp" id="proj-cogbot">
+            <div class="glass-card project-card">
+              <div style="font-size: 2.2rem; color: var(--accent-purple); margin-bottom: 1.2rem;">
+                <i class="fa-solid fa-robot"></i>
+              </div>
+              <h3>CognitiveAgent Bot</h3>
+              <p>
+                A local autonomous agent utilizing vector databases (ChromaDB) to manage retrieval-augmented generation. Outfitted with state management and recursive feedback nodes.
+              </p>
+              <div class="project-tags">
+                <span class="research-tag">Python</span>
+                <span class="research-tag">FastAPI</span>
+                <span class="research-tag">LLMs</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.85rem;"><i class="fa-brands fa-github"></i> Source Code</a>
+                <a href="#" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.85rem;"><i class="fa-solid fa-book"></i> Docs</a>
+              </div>
+            </div>
+          </div> -->
+
+          <!-- Project 3 -->
+          <!-- <div class="project-card-wrapper" data-category="cv" id="proj-visiondepth">
+            <div class="glass-card project-card">
+              <div style="font-size: 2.2rem; color: var(--accent-cyan); margin-bottom: 1.2rem;">
+                <i class="fa-solid fa-cube"></i>
+              </div>
+              <h3>VisionDepth Network</h3>
+              <p>
+                Monocular depth mapping system built on customized CNN filters. Estimates spatial structures from standard video feeds in real-time, outputting colored pixel depth arrays.
+              </p>
+              <div class="project-tags">
+                <span class="research-tag">PyTorch</span>
+                <span class="research-tag">CNNs</span>
+                <span class="research-tag">OpenCV</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.85rem;"><i class="fa-brands fa-github"></i> Code Base</a>
+                <a href="#" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.85rem;"><i class="fa-solid fa-chart-bar"></i> Benchmarks</a>
+              </div>
+            </div>
+          </div> -->
+
+          <!-- Project 4 -->
+          <!-- <div class="project-card-wrapper" data-category="dl" id="proj-sparseattn">
+            <div class="glass-card project-card">
+              <div style="font-size: 2.2rem; color: var(--accent-purple); margin-bottom: 1.2rem;">
+                <i class="fa-solid fa-share-nodes"></i>
+              </div>
+              <h3>Sparse Attention Layer</h3>
+              <p>
+                A high-speed, custom LibTorch C++ extension designed for transformer nodes. Restructures multi-head queries to execute operations via sparse indices, bypassing dense matrix routes.
+              </p>
+              <div class="project-tags">
+                <span class="research-tag">C++</span>
+                <span class="research-tag">CUDA</span>
+                <span class="research-tag">LibTorch</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.85rem;"><i class="fa-brands fa-github"></i> Code Library</a>
+              </div>
+            </div>
+          </div> -->
+
+          <!-- Project 5 -->
+          <!-- <div class="project-card-wrapper" data-category="nlp" id="proj-robonav">
+            <div class="glass-card project-card">
+              <div style="font-size: 2.2rem; color: var(--accent-cyan); margin-bottom: 1.2rem;">
+                <i class="fa-solid fa-gamepad"></i>
+              </div>
+              <h3>RoboNav Gymnasium</h3>
+              <p>
+                A custom Gymnasium environment designed for training reinforcement learning agents. Simulates laser ranges and map structures to teach navigation pathways.
+              </p>
+              <div class="project-tags">
+                <span class="research-tag">Python</span>
+                <span class="research-tag">Gymnasium</span>
+                <span class="research-tag">PPO</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.85rem;"><i class="fa-brands fa-github"></i> Code Base</a>
+              </div>
+            </div>
+          </div> -->
+
+          <!-- Project 6 -->
+          <!-- <div class="project-card-wrapper" data-category="cv" id="proj-synapseweb">
+            <div class="glass-card project-card">
+              <div style="font-size: 2.2rem; color: var(--accent-purple); margin-bottom: 1.2rem;">
+                <i class="fa-solid fa-diagram-project"></i>
+              </div>
+              <h3>Synapse Visualizer</h3>
+              <p>
+                A lightweight Electron dashboard displaying active kernel feature maps from live webcam processing streams. Helpful for verifying convolution filter patterns.
+              </p>
+              <div class="project-tags">
+                <span class="research-tag">Electron</span>
+                <span class="research-tag">Tensorflow.js</span>
+                <span class="research-tag">Node.js</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.85rem;"><i class="fa-brands fa-github"></i> Repository</a>
+              </div>
+            </div>
+          </div> -->
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <a href="index.html" class="logo footer-logo">
+            <span class="logo-text">MALINDA LAKSHAN</span><span class="logo-dot"></span>
+          </a>
+          <p class="footer-desc">
+            AI student and researcher specialized in deep learning, neural network engineering, and autonomous architectures.
+          </p>
+          <div class="footer-socials">
+            <a href="https://github.com/malindalakshan-git" class="social-icon" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/malinda-lakshan-80937a413/" class="social-icon" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="mailto:malindalakshanbro@gmail.com" class="social-icon" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
+          </div>
+        </div>
+        
+        <div>
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="research.html">Research Work</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact Nodes</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-heading">Core Areas</h4>
+          <ul class="footer-links">
+            <li><a href="research.html#transformer-networks">Transformer Nets</a></li>
+            <li><a href="research.html#computer-vision">Computer Vision</a></li>
+            <li><a href="projects.html#neuro-sim">NeuroSim Platform</a></li>
+            <li><a href="projects.html#cognitive-bot">Cognitive Agent</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-subscribe">
+          <h4 class="footer-heading">Node Connection</h4>
+          <p>Subscribe to receive updates on my recent publications and code releases.</p>
+          <form class="subscribe-form" onsubmit="event.preventDefault(); alert('Subscribed to mail server node successfully!')">
+            <input type="email" placeholder="node@domain.com" class="subscribe-input" required aria-label="Email Address">
+            <button type="submit" class="subscribe-btn" aria-label="Submit Subscription"><i class="fa-solid fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Malinda Lakshan. All rights reserved. Designed for cutting-edge AI environments.
+        </div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="#">Privacy Protocol</a>
+          <a href="#">Terms of Access</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Project Detail Modal -->
+  <div id="project-modal" class="project-modal-overlay">
+    <div class="project-modal-container">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="modal-gallery" id="modal-gallery">
+        <div class="gallery-track" id="gallery-track"></div>
+        <button class="gallery-nav gallery-prev" id="gallery-prev" aria-label="Previous">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button class="gallery-nav gallery-next" id="gallery-next" aria-label="Next">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+        <div class="gallery-counter" id="gallery-counter">1 / 1</div>
+        <div class="gallery-dots" id="gallery-dots"></div>
+      </div>
+      <div class="modal-body">
+        <h2 class="modal-project-title" id="modal-project-title"></h2>
+        <div class="modal-project-tags" id="modal-project-tags"></div>
+        <p class="modal-project-desc" id="modal-project-desc"></p>
+        <div class="modal-project-links" id="modal-project-links"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/network.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Project Data & Modal Logic -->
+  <script>
+    const projectsData = {
+      'school-bell': {
+        title: 'School Bell System',
+        description: 'An interactive, professional bell system application specially designed for schools. This application has a modern GUI and a better functionality to manage school schedules efficiently. The system provides automated bell scheduling, manual override controls, holiday management, and an intuitive dashboard for school administrators.',
+        tags: ['Python', 'Tkinter', 'Windows'],
+        links: [
+          { icon: 'fa-brands fa-github', text: 'Repository', url: 'https://github.com/malindalakshan-git/School-Bell-System' }
+        ],
+        screenshots: [
+          { src: 'assets/project-screenshots/school-bell/01_starting.png', label: 'Startup Screen' },
+          { src: 'assets/project-screenshots/school-bell/02_main_dashboard.png', label: 'Main Dashboard' },
+          { src: 'assets/project-screenshots/school-bell/03_create_new.png', label: 'Create New Schedule' },
+          { src: 'assets/project-screenshots/school-bell/04_open_saved.png', label: 'Open Saved File' },
+          { src: 'assets/project-screenshots/school-bell/05_running.png', label: 'System Running' },
+          { src: 'assets/project-screenshots/school-bell/06_settings.png', label: 'Settings Panel' },
+          { src: 'assets/project-screenshots/school-bell/07_about.png', label: 'About' }
+        ]
+      }
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const modal = document.getElementById('project-modal');
+      const closeBtn = document.getElementById('modal-close-btn');
+      const track = document.getElementById('gallery-track');
+      const dots = document.getElementById('gallery-dots');
+      const counter = document.getElementById('gallery-counter');
+      const prevBtn = document.getElementById('gallery-prev');
+      const nextBtn = document.getElementById('gallery-next');
+      const titleEl = document.getElementById('modal-project-title');
+      const tagsEl = document.getElementById('modal-project-tags');
+      const descEl = document.getElementById('modal-project-desc');
+      const linksEl = document.getElementById('modal-project-links');
+
+      let currentIndex = 0;
+      let totalSlides = 0;
+
+      function openModal(projectId) {
+        const project = projectsData[projectId];
+        if (!project) return;
+
+        currentIndex = 0;
+        totalSlides = project.screenshots.length;
+        renderGallery(project.screenshots);
+        renderDetails(project);
+
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function renderGallery(screenshots) {
+        track.innerHTML = '';
+        dots.innerHTML = '';
+
+        screenshots.forEach((shot, i) => {
+          const slide = document.createElement('div');
+          slide.className = 'gallery-slide';
+
+          if (shot.src) {
+            const img = document.createElement('img');
+            img.src = shot.src;
+            img.alt = shot.label;
+            img.style.cssText = 'width:100%;height:100%;object-fit:scale-down;display:block;background:#111;padding:1rem;';
+            slide.appendChild(img);
+
+            const label = document.createElement('div');
+            label.className = 'gallery-label';
+            label.textContent = shot.label;
+            slide.appendChild(label);
+          } else {
+            slide.innerHTML = '<div class="gallery-placeholder"><i class="' + shot.icon + '"></i><span>' + shot.label + '</span></div>';
+          }
+
+          track.appendChild(slide);
+
+          const dot = document.createElement('button');
+          dot.className = 'gallery-dot' + (i === 0 ? ' active' : '');
+          dot.setAttribute('data-index', i);
+          dot.addEventListener('click', () => goToSlide(i));
+          dots.appendChild(dot);
+        });
+
+        goToSlide(0);
+      }
+
+      function renderDetails(project) {
+        titleEl.textContent = project.title;
+        descEl.textContent = project.description;
+
+        tagsEl.innerHTML = project.tags.map(t => '<span class="research-tag">' + t + '</span>').join('');
+
+        linksEl.innerHTML = project.links.map(l =>
+          '<a href="' + l.url + '" target="_blank" rel="noopener" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.85rem;"><i class="' + l.icon + '"></i> ' + l.text + '</a>'
+        ).join('');
+      }
+
+      function goToSlide(index) {
+        if (index < 0) index = totalSlides - 1;
+        if (index >= totalSlides) index = 0;
+        currentIndex = index;
+
+        track.style.transform = 'translateX(-' + (index * 100) + '%)';
+        counter.textContent = (index + 1) + ' / ' + totalSlides;
+
+        document.querySelectorAll('.gallery-dot').forEach((d, i) => {
+          d.classList.toggle('active', i === index);
+        });
+      }
+
+      function closeModal() {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      // Event listeners
+      closeBtn.addEventListener('click', closeModal);
+
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (!modal.classList.contains('active')) return;
+        if (e.key === 'Escape') closeModal();
+        if (e.key === 'ArrowLeft') goToSlide(currentIndex - 1);
+        if (e.key === 'ArrowRight') goToSlide(currentIndex + 1);
+      });
+
+      prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
+      nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
+
+      // Card click handlers
+      document.querySelectorAll('[data-project]').forEach(card => {
+        card.addEventListener('click', (e) => {
+          if (e.target.closest('a') || e.target.closest('.btn')) return;
+          openModal(card.getAttribute('data-project'));
+        });
+      });
+
+      // Auto-open modal if URL has ?project=key
+      const params = new URLSearchParams(window.location.search);
+      const projectParam = params.get('project');
+      if (projectParam && projectsData[projectParam]) {
+        openModal(projectParam);
+        // Scroll to top so modal is centered
+        window.scrollTo(0, 0);
+      }
+    });
+  </script>
+  <!-- Project Filter Inline Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const buttons = document.querySelectorAll('.filter-btn');
+      const cards = document.querySelectorAll('.project-card-wrapper');
+      
+      buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          // Remove active classes
+          buttons.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          
+          const filter = btn.getAttribute('data-filter');
+          
+          cards.forEach(card => {
+            if (filter === 'all' || card.getAttribute('data-category') === filter) {
+              card.style.display = 'block';
+              // Trigger reflow for transition
+              void card.offsetWidth;
+              card.style.opacity = '1';
+              card.style.transform = 'scale(1)';
+            } else {
+              card.style.opacity = '0';
+              card.style.transform = 'scale(0.95)';
+              // Delay setting display none until animation finishes
+              setTimeout(() => {
+                if (card.style.opacity === '0') {
+                  card.style.display = 'none';
+                }
+              }, 300);
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>
