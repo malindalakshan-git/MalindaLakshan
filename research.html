@@ -17,7 +17,7 @@
 <body>
 
   <!-- Background Canvas -->
-  <canvas id="network-canvas" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: all; z-index: 1;"></canvas>
+  <canvas id="network-canvas" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 1;"></canvas>
 
   <!-- Glowing blobs for background layout -->
   <div class="hero-glow-blob"></div>
@@ -83,13 +83,13 @@
           </div>
 
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
-            <div class="glass-card" style="padding: 1.5rem; text-align: center;">
+            <div class="glass-card" style="padding: 1.5rem; text-align: center;" id="transformer-networks">
               <div style="font-size: 2rem; color: var(--accent-cyan); margin-bottom: 1rem;"><i class="fa-solid fa-dharmachakra"></i></div>
               <h4 style="color: #ffffff; margin-bottom: 0.5rem; font-size: 1rem;">Logic & Epistemology</h4>
               <p style="font-size: 0.85rem;">Studying Buddhist logic, reasoning methods, and theories of knowledge.</p>
             </div>
             
-            <div class="glass-card" style="padding: 1.5rem; text-align: center;">
+            <div class="glass-card" style="padding: 1.5rem; text-align: center;" id="computer-vision">
               <div style="font-size: 2rem; color: var(--accent-purple); margin-bottom: 1rem;"><i class="fa-solid fa-brain"></i></div>
               <h4 style="color: #ffffff; margin-bottom: 0.5rem; font-size: 1rem;">Philosophy of Mind</h4>
               <p style="font-size: 0.85rem;">Exploring consciousness, perception, and mental phenomena through Buddhist texts.</p>
