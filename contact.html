@@ -128,7 +128,7 @@
               </div>
             </div>
 
-            <form class="glass-card" id="contact-form" style="display: flex; flex-direction: column; gap: 1.5rem; padding: 2.5rem;">
+            <form class="glass-card" id="contact-form" action="https://api.web3forms.com/submit" method="POST" style="display: flex; flex-direction: column; gap: 1.5rem; padding: 2.5rem;">
               <h3 style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 8px;">
                 <i class="fa-solid fa-paper-plane" style="color: var(--accent-cyan);"></i> Send your thoughts
               </h3>
@@ -153,7 +153,7 @@
               </div>
               
               <button type="submit" class="btn btn-primary" id="btn-submit" style="width: 100%; padding: 1rem; cursor: pointer;">
-              Send<i class="fa-regular fa-paper-plane"></i>
+              Send <i class="fa-regular fa-paper-plane"></i>
               </button>
             </form>
           </div>
@@ -201,25 +201,17 @@
         </div>
         
         <div class="footer-subscribe">
-  <h4 class="footer-heading">Stay Updated</h4>
-  <p>Subscribe to receive updates on my recent publications and code releases.</p>
-  
-  <form class="subscribe-form" action="https://api.web3forms.com/submit" method="POST">
-    
-    <input type="hidden" name="access_key" value="13e8e991-9d7e-4a86-88db-58048e05e40c">
-    
-    <input type="hidden" name="subject" value="New Website Newsletter Subscriber!">
-    
-    <input type="email" name="email" placeholder="your.email@gmail.com" class="subscribe-input" required aria-label="Email Address">
-
-    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-    
-    <button type="submit" class="subscribe-btn" aria-label="Submit Subscription">
-      <i class="fa-solid fa-paper-plane"></i>
-    </button>
-    
-  </form>
-</div>
+          <h4 class="footer-heading">Stay Updated</h4>
+          <p>Subscribe to receive updates on my recent publications and code releases.</p>
+          <form class="subscribe-form" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="13e8e991-9d7e-4a86-88db-58048e05e40c">
+            <input type="hidden" name="subject" value="New Website Newsletter Subscriber!">
+            <input type="checkbox" name="botcheck" style="display: none;">
+            <input type="email" name="email" placeholder="your.email@gmail.com" class="subscribe-input" required aria-label="Email Address">
+            <button type="submit" class="subscribe-btn" aria-label="Submit Subscription"><i class="fa-solid fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
       
       <div class="footer-bottom">
         <div>

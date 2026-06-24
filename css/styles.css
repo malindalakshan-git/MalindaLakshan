@@ -467,6 +467,10 @@ footer {
   transition: var(--transition-smooth);
 }
 
+[data-theme="light"] .social-icon {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
 .social-icon:hover {
   background: var(--gradient-cyber);
   color: var(--bg-primary);
@@ -555,6 +559,10 @@ footer {
   color: var(--text-primary);
   border-color: var(--accent-cyan);
   box-shadow: 0 0 12px rgba(216, 7, 6, 0.15);
+}
+
+[data-theme="light"] .theme-toggle:hover {
+  box-shadow: 0 0 12px rgba(192, 57, 43, 0.15);
 }
 
 .theme-toggle .icon-sun,
@@ -761,6 +769,10 @@ footer {
   padding: 0.65rem 1.5rem;
   background: rgba(0, 0, 0, 0.3);
   border-bottom: 1px solid var(--border-color);
+}
+
+[data-theme="light"] .node-status-bar {
+  background: rgba(255, 255, 255, 0.6);
 }
 
 .node-indicator {
