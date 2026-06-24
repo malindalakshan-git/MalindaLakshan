@@ -32,18 +32,41 @@ document.addEventListener('DOMContentLoaded', () => {
   // 3. Mobile Menu Toggle
   const hamburger = document.querySelector('.hamburger');
   const navMenu = document.querySelector('.nav-menu');
+  const navOverlay = document.getElementById('nav-overlay');
+  const htmlEl = document.documentElement;
+
+  function toggleNav(open) {
+    const isActive = open !== undefined ? open : !navMenu.classList.contains('active');
+    navMenu.classList.toggle('active', isActive);
+    hamburger.classList.toggle('active', isActive);
+    if (navOverlay) navOverlay.classList.toggle('active', isActive);
+    htmlEl.classList.toggle('nav-open', isActive);
+  }
+
   if (hamburger && navMenu) {
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('active');
-      navMenu.classList.toggle('active');
-    });
+    hamburger.addEventListener('click', () => toggleNav());
+
+    // Close menu when overlay is clicked
+    if (navOverlay) {
+      navOverlay.addEventListener('click', () => toggleNav(false));
+    }
 
     // Close menu when link is clicked
     document.querySelectorAll('.nav-item a').forEach(link => {
-      link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
-      });
+      link.addEventListener('click', () => toggleNav(false));
+    });
+  }
+
+  // Set theme toggle label for mobile sidebar
+  const themeToggleBtn = document.getElementById('theme-toggle');
+  if (themeToggleBtn) {
+    function updateToggleLabel() {
+      const theme = document.documentElement.getAttribute('data-theme');
+      themeToggleBtn.setAttribute('data-label', theme === 'light' ? 'Switch to Dark' : 'Switch to Light');
+    }
+    updateToggleLabel();
+    themeToggleBtn.addEventListener('click', () => {
+      setTimeout(updateToggleLabel, 10);
     });
   }
 
