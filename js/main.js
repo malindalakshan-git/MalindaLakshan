@@ -135,76 +135,123 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 6. Contact Form - Terminal Success Animation
+  // 6. Contact Form - Terminal & Web3Forms Submission
   const contactForm = document.getElementById('contact-form');
   const terminalOverlay = document.getElementById('terminal-overlay');
   const terminalLogs = document.getElementById('terminal-logs');
 
   if (contactForm && terminalOverlay && terminalLogs) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      
-      // Get values
-      const nameVal = document.getElementById('contact-name').value;
-      const emailVal = document.getElementById('contact-email').value;
-      const msgVal = document.getElementById('contact-message').value;
-      
+
+      const nameVal = document.getElementById('contact-name').value.trim();
+      const emailVal = document.getElementById('contact-email').value.trim();
+      const msgVal = document.getElementById('contact-message').value.trim();
+
       if (!nameVal || !emailVal || !msgVal) return;
 
       // Show terminal overlay
       terminalOverlay.classList.add('active');
       terminalLogs.innerHTML = '';
-      
+
       const commands = [
         `guest@malinda-ai:~# send-mail --to malinda`,
-        `> Resolving mail node target... OK [relay.malindalakshan.com]`,
+        `> Resolving mail node target... OK [relay.web3forms.com]`,
         `> Establishing secure TLS 1.3 handshake...`,
         `> Key exchange verified. (ECDHE-ECDSA-AES128-GCM-SHA256)`,
         `> Packaging message payload (Sender: ${emailVal})...`,
         `> Encrypting message bytes with AES-GCM-256...`,
-        `> Transmission buffer streaming: [████████████████] 100%`,
-        `> Synapses fire: routing message to primary cognitive cluster...`,
-        `> Server response: 200 OK (Packet ID: ML-${Math.floor(1000 + Math.random() * 9000)})`,
-        `guest@malinda-ai:~# echo "Transmission successful! Thanks, ${nameVal}."`
       ];
 
       let cmdIndex = 0;
+      let animationDone = false;
+
       function printCommand() {
         if (cmdIndex < commands.length) {
           const logLine = document.createElement('div');
           logLine.textContent = commands[cmdIndex];
-          
-          // Color command prompts differently
           if (commands[cmdIndex].startsWith('guest@')) {
             logLine.style.color = '#d80706';
-          } else if (commands[cmdIndex].includes('successful') || commands[cmdIndex].includes('OK')) {
+          } else if (commands[cmdIndex].includes('OK')) {
             logLine.style.color = '#22c55e';
           }
-          
           terminalLogs.appendChild(logLine);
           cmdIndex++;
-          
-          // Scroll to bottom
           terminalLogs.scrollTop = terminalLogs.scrollHeight;
-          
-          setTimeout(printCommand, 600 + Math.random() * 400);
+          setTimeout(printCommand, 500 + Math.random() * 300);
         } else {
-          // Success completed! Hide terminal and display success card in form after 2 seconds
-          setTimeout(() => {
-            terminalOverlay.classList.remove('active');
-            contactForm.innerHTML = `
-              <div class="glass-card glow-border" style="text-align: center; border-color: #22c55e; padding: 3rem 1.5rem;">
-                <div style="font-size: 3rem; color: #22c55e; margin-bottom: 1.5rem;">✓</div>
-                <h3 style="color: #ffffff; margin-bottom: 1rem;">Message Successfully Routed!</h3>
-                <p style="color: var(--text-secondary);">Thank you, <strong>${nameVal}</strong>. Your transmission has been integrated into my database. I will respond to your node shortly.</p>
-                <button onclick="window.location.reload()" class="btn btn-secondary" style="margin-top: 2rem;">Send Another Transmission</button>
-              </div>
-            `;
-          }, 1500);
+          animationDone = true;
         }
       }
 
       setTimeout(printCommand, 300);
+
+      // Send to Web3Forms
+      try {
+        const formData = new FormData(contactForm);
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: formData
+        });
+        const result = await response.json();
+
+        // Wait for animation to finish
+        const checkDone = setInterval(() => {
+          if (animationDone) {
+            clearInterval(checkDone);
+
+            if (result.success) {
+              const successLine = document.createElement('div');
+              successLine.textContent = `> Server response: 200 OK (Packet ID: ML-${Math.floor(1000 + Math.random() * 9000)})`;
+              successLine.style.color = '#22c55e';
+              terminalLogs.appendChild(successLine);
+
+              const finalLine = document.createElement('div');
+              finalLine.textContent = `guest@malinda-ai:~# echo "Transmission successful! Thanks, ${nameVal}."`;
+              finalLine.style.color = '#d80706';
+              terminalLogs.appendChild(finalLine);
+              terminalLogs.scrollTop = terminalLogs.scrollHeight;
+
+              setTimeout(() => {
+                terminalOverlay.classList.remove('active');
+                contactForm.innerHTML = `
+                  <div class="glass-card glow-border" style="text-align: center; border-color: #22c55e; padding: 3rem 1.5rem;">
+                    <div style="font-size: 3rem; color: #22c55e; margin-bottom: 1.5rem;">✓</div>
+                    <h3 style="color: var(--text-primary); margin-bottom: 1rem;">Message Successfully Routed!</h3>
+                    <p style="color: var(--text-secondary);">Thank you, <strong>${nameVal}</strong>. Your message has been delivered. I will respond to you shortly.</p>
+                    <button onclick="window.location.reload()" class="btn btn-secondary" style="margin-top: 2rem;">Send Another Transmission</button>
+                  </div>
+                `;
+              }, 1200);
+            } else {
+              const errLine = document.createElement('div');
+              errLine.textContent = `> ERROR: ${result.message || 'Transmission failed. Please try again.'}`;
+              errLine.style.color = '#ef4444';
+              terminalLogs.appendChild(errLine);
+              terminalLogs.scrollTop = terminalLogs.scrollHeight;
+
+              setTimeout(() => {
+                terminalOverlay.classList.remove('active');
+              }, 2500);
+            }
+          }
+        }, 100);
+      } catch (err) {
+        const checkDone2 = setInterval(() => {
+          if (animationDone) {
+            clearInterval(checkDone2);
+            const errLine = document.createElement('div');
+            errLine.textContent = `> NETWORK ERROR: Could not reach mail server. Check your connection.`;
+            errLine.style.color = '#ef4444';
+            terminalLogs.appendChild(errLine);
+            terminalLogs.scrollTop = terminalLogs.scrollHeight;
+
+            setTimeout(() => {
+              terminalOverlay.classList.remove('active');
+            }, 2500);
+          }
+        }, 100);
+      }
     });
   }
 });
