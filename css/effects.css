@@ -616,7 +616,7 @@ textarea.form-input {
   top: 0;
   height: 100%;
   width: 2px;
-  background: linear-gradient(to bottom, var(--accent-cyan) 0%, rgba(155, 81, 224, 0.3) 100%);
+  background: linear-gradient(to bottom, var(--accent-cyan) 0%, rgba(var(--accent-purple-rgb), 0.3) 100%);
 }
 
 .timeline-item {

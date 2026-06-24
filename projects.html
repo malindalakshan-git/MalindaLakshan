@@ -256,8 +256,11 @@
         <div class="footer-subscribe">
           <h4 class="footer-heading">Node Connection</h4>
           <p>Subscribe to receive updates on my recent publications and code releases.</p>
-          <form class="subscribe-form" onsubmit="event.preventDefault(); alert('Subscribed to mail server node successfully!')">
-            <input type="email" placeholder="node@domain.com" class="subscribe-input" required aria-label="Email Address">
+          <form class="subscribe-form" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="13e8e991-9d7e-4a86-88db-58048e05e40c">
+            <input type="hidden" name="subject" value="New Newsletter Subscriber from Portfolio">
+            <input type="checkbox" name="botcheck" style="display: none;">
+            <input type="email" name="email" placeholder="node@domain.com" class="subscribe-input" required aria-label="Email Address">
             <button type="submit" class="subscribe-btn" aria-label="Submit Subscription"><i class="fa-solid fa-paper-plane"></i></button>
           </form>
         </div>

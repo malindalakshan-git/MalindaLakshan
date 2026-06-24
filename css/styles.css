@@ -6,6 +6,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 :root {
+  /* Typography */
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-heading: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
   /* Colors - Dark theme (default) */
   --bg-primary: #0a0303;
   --bg-secondary: #1d090a;
@@ -36,7 +40,7 @@
   --transition-fast: all 0.15s ease;
 
   /* Theme-aware helpers */
-  --section-alt-bg: rgba(13, 17, 39, 0.4);
+  --section-alt-bg: rgba(29, 9, 10, 0.5);
 }
 
 [data-theme="light"] {
@@ -179,7 +183,7 @@ header {
 header.scrolled {
   height: 70px;
   background-color: rgba(6, 8, 20, 0.85);
-  border-bottom: 1px solid rgba(0, 242, 254, 0.15);
+  border-bottom: 1px solid rgba(var(--accent-cyan-rgb), 0.15);
 }
 
 [data-theme="light"] header.scrolled {

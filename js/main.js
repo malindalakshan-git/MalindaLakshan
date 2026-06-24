@@ -58,16 +58,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Set theme toggle label for mobile sidebar
-  const themeToggleBtn = document.getElementById('theme-toggle');
-  if (themeToggleBtn) {
+  if (themeToggle) {
     function updateToggleLabel() {
       const theme = document.documentElement.getAttribute('data-theme');
-      themeToggleBtn.setAttribute('data-label', theme === 'light' ? 'Switch to Dark' : 'Switch to Light');
+      themeToggle.setAttribute('data-label', theme === 'light' ? 'Switch to Dark' : 'Switch to Light');
     }
     updateToggleLabel();
-    themeToggleBtn.addEventListener('click', () => {
-      setTimeout(updateToggleLabel, 10);
-    });
+    themeToggle.addEventListener('click', updateToggleLabel);
   }
 
   // 4. Typewriter Animation (Hero section)
