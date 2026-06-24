@@ -269,6 +269,35 @@ header.scrolled {
   text-shadow: 0 0 15px rgba(var(--accent-cyan-rgb), 0.4);
 }
 
+/* Highlighted Contact nav item */
+.nav-item-cta a {
+  color: var(--accent-cyan);
+  font-weight: 600;
+}
+
+.nav-item-cta a:hover {
+  color: var(--accent-purple);
+}
+
+.nav-item-cta .nav-cta-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-cyan);
+  box-shadow: 0 0 8px var(--accent-cyan);
+  animation: cta-dot-pulse 1.5s ease-in-out infinite;
+  margin-left: 3px;
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
+}
+
+@keyframes cta-dot-pulse {
+  0%, 100% { opacity: 0.4; box-shadow: 0 0 4px var(--accent-cyan); }
+  50% { opacity: 1; box-shadow: 0 0 12px var(--accent-cyan); }
+}
+
 .hamburger {
   display: none;
   cursor: pointer;
