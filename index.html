@@ -58,14 +58,14 @@
       <div class="container">
         <div class="grid-2">
           <div class="hero-info" style="display: flex; flex-direction: column; justify-content: center; gap: 1.5rem;">
-            <h1 class="glow-text">Malinda Lakshan</h1>
-            <h3 style="font-weight: 500; font-family: var(--font-body); color: var(--text-primary); display: flex; align-items: center;">
+            <h1 class="glow-text reveal" style="transition-delay: 0ms;">Malinda Lakshan</h1>
+            <h3 class="reveal" style="transition-delay: 100ms; font-weight: 500; font-family: var(--font-body); color: var(--text-primary); display: flex; align-items: center;">
               I am a&nbsp;<span class="typing-text" style="color: var(--accent-cyan); font-weight: 700;"></span><span class="typing-cursor">|</span>
             </h3>
-            <p style="font-size: 1.15rem; max-width: 500px; color: var(--text-secondary);">
+            <p class="reveal" style="transition-delay: 200ms; font-size: 1.15rem; max-width: 500px; color: var(--text-secondary);">
               Deep learning researcher and academic student focused on artificial intelligence, neural network optimization, computer vision networks, and agentic cognitive systems.
             </p>
-            <div style="display: flex; gap: 1.5rem; margin-top: 1rem;">
+            <div class="reveal" style="transition-delay: 300ms; display: flex; gap: 1.5rem; margin-top: 1rem;">
               <a href="research.html" class="btn btn-primary" id="cta-explore">
                 Explore Research <i class="fa-solid fa-arrow-right"></i>
               </a>
@@ -75,11 +75,16 @@
             </div>
           </div>
           
-          <!-- Right column - Profile Image -->
-          <div class="reveal delay-200" style="display: flex; align-items: center; justify-content: center;">
-            <div class="portfolio-img-wrapper glow-border hero-image">
+          <!-- Right column - Dual Profile Images -->
+          <div class="hero-images-wrapper reveal" style="transition-delay: 200ms;">
+            <!-- Main portrait -->
+            <div class="hero-image-main">
               <img src="assets/malinda.jpeg" alt="Malinda Lakshan Portrait">
-              <div class="portfolio-img-glow-overlay"></div>
+              <div class="hero-image-glow"></div>
+            </div>
+            <!-- Secondary portrait (floating) -->
+            <div class="hero-image-secondary reveal-scale" style="transition-delay: 400ms;">
+              <img src="assets/malinda01.jpeg" alt="Malinda Lakshan Alternate">
             </div>
           </div>
           
@@ -87,12 +92,12 @@
       </div>
     </section>
     <!-- [01] CORE_MATRIX - Skills Summary -->
-    <section class="core-matrix-section" data-aos="fade-up">
+    <section class="core-matrix-section">
       <div class="container">
-        <h2>SKILL_MATRIX</h2>
+        <h2 class="reveal">SKILL_MATRIX</h2>
         <div class="skills-grid">
           <!-- Card 1 -->
-          <div class="skill-card skill-card-clickable" data-skill="core-languages">
+          <div class="skill-card skill-card-clickable reveal delay-100" data-skill="core-languages">
             <div class="skill-card-icon">
               <i class="fa-solid fa-terminal"></i>
             </div>
@@ -103,7 +108,7 @@
             </p>
           </div>
           <!-- Card 2 -->
-          <div class="skill-card skill-card-clickable" data-skill="creative-suite">
+          <div class="skill-card skill-card-clickable reveal delay-200" data-skill="creative-suite">
             <div class="skill-card-icon">
               <i class="fa-solid fa-pen-ruler"></i>
             </div>
@@ -114,7 +119,7 @@
             </p>
           </div>
           <!-- Card 3 -->
-          <div class="skill-card skill-card-clickable" data-skill="specializations">
+          <div class="skill-card skill-card-clickable reveal delay-300" data-skill="specializations">
             <div class="skill-card-icon">
               <i class="fa-solid fa-microchip"></i>
             </div>
@@ -129,12 +134,12 @@
     </section>
 
     <!-- [02] FEATURED_NODES - Highlighted Projects -->
-    <section class="featured-nodes-section" data-aos="fade-up">
+    <section class="featured-nodes-section">
       <div class="container">
-        <h2>FEATURED_NODES</h2>
+        <h2 class="reveal">FEATURED_NODES</h2>
         <div class="projects-node-list">
           <!-- Project 1 -->
-          <div class="project-node-card">
+          <div class="project-node-card reveal delay-100">
             <div class="node-status-bar">
               <span class="node-indicator online"></span>
               <span class="node-label">NODE://SCHOOL-BELL-AUTOMATION</span>
