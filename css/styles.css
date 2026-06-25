@@ -71,6 +71,11 @@
   box-sizing: border-box;
 }
 
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
@@ -249,10 +254,13 @@ header.scrolled {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 0;
+  width: 100%;
   height: 2px;
   background: var(--gradient-cyber);
-  transition: var(--transition-smooth);
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-item a:hover {
@@ -261,7 +269,7 @@ header.scrolled {
 
 .nav-item a:hover::after,
 .nav-item.active a::after {
-  width: 100%;
+  transform: scaleX(1);
 }
 
 .nav-item.active a {
@@ -1056,5 +1064,130 @@ footer {
     flex-direction: column;
     gap: 1rem;
     text-align: center;
+  }
+}
+
+/* ========================================================
+   Enhanced Responsive Breakpoints
+   ======================================================== */
+
+@media (max-width: 1024px) {
+  .hero-section .grid-2 {
+    gap: 2.5rem;
+  }
+
+  .nav-menu {
+    gap: 1.5rem;
+  }
+
+  .hero-image-main {
+    width: 280px;
+  }
+}
+
+@media (max-width: 600px) {
+  section {
+    padding: 3rem 0;
+  }
+
+  .container {
+    width: 92%;
+  }
+
+  .hero-section .grid-2 {
+    gap: 1.5rem;
+  }
+
+  .hero-section .hero-info .reveal:last-child {
+    flex-direction: column;
+  }
+
+  .hero-section .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  h1 {
+    font-size: clamp(1.8rem, 7vw, 2.2rem);
+  }
+
+  h2 {
+    font-size: clamp(1.3rem, 5vw, 1.6rem);
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+
+  .subscribe-form {
+    flex-direction: column;
+  }
+
+  .subscribe-btn {
+    width: 100%;
+    height: 42px;
+  }
+
+  .footer-desc {
+    max-width: 100%;
+  }
+
+  .nav-item-cta .nav-cta-dot {
+    display: none;
+  }
+
+  .social-icon {
+    width: 34px;
+    height: 34px;
+    font-size: 0.9rem;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .node-body {
+    padding: 1.25rem;
+  }
+
+  .contact-info-col,
+  .contact-form-col {
+    min-width: 100% !important;
+  }
+
+  .contact-grid {
+    gap: 1.5rem;
+  }
+
+  .projects-node-list {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-images-wrapper {
+    min-height: 240px;
+  }
+
+  .hero-image-main {
+    width: 160px;
+  }
+
+  .hero-image-secondary {
+    width: 90px;
+    bottom: 5px;
+    right: 20px;
+  }
+
+  .nav-menu {
+    width: 220px;
+  }
+
+  .project-card-wrapper {
+    min-width: 0;
   }
 }

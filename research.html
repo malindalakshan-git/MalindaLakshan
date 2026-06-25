@@ -16,6 +16,9 @@
 </head>
 <body>
 
+  <!-- Scroll Progress Bar -->
+  <div id="scroll-progress" class="scroll-progress-bar"></div>
+
   <!-- Background Canvas -->
   <canvas id="network-canvas" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 1;"></canvas>
 
@@ -68,7 +71,7 @@
     </section>
 
     <!-- Buddhism Research Section -->
-    <section style="background-color: var(--section-alt-bg); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+    <section class="gradient-bg" style="background-color: var(--section-alt-bg); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
       <div class="container">
         <div style="text-align: center; margin-bottom: 4rem;">
           <h2>Current Research</h2>
@@ -85,8 +88,8 @@
             </p>
           </div>
 
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
-            <div class="glass-card" style="padding: 1.5rem; text-align: center;" id="transformer-networks">
+          <div class="research-card-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+            <div class="glass-card float-card" style="padding: 1.5rem; text-align: center;" id="transformer-networks">
               <div style="font-size: 2rem; color: var(--accent-cyan); margin-bottom: 1rem;"><i class="fa-solid fa-dharmachakra"></i></div>
               <h4 style="color: #ffffff; margin-bottom: 0.5rem; font-size: 1rem;">Logic & Epistemology</h4>
               <p style="font-size: 0.85rem;">Studying Buddhist logic, reasoning methods, and theories of knowledge.</p>
@@ -115,17 +118,17 @@
     </section>
 
     <!-- Future Research Section -->
-    <section>
+    <section class="gradient-bg">
       <div class="container">
         <div style="text-align: center; margin-bottom: 3rem;">
-          <h2>Future Directions</h2>
+          <h2 class="text-shimmer">Future Directions</h2>
           <p style="max-width: 600px; margin: 1rem auto 0 auto;" class="reveal">
             I am at the beginning of my research journey. These are areas I plan to explore further.
           </p>
         </div>
 
         <div class="grid-3 reveal">
-          <div class="glass-card" style="text-align: left; padding: 2rem;">
+          <div class="glass-card float-card" style="text-align: left; padding: 2rem;">
             <div style="font-size: 2rem; color: var(--accent-cyan); margin-bottom: 1rem;"><i class="fa-solid fa-robot"></i></div>
             <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;">AI & Machine Learning</h3>
             <p style="font-size: 0.95rem;">
@@ -133,7 +136,7 @@
             </p>
           </div>
           
-          <div class="glass-card" style="text-align: left; padding: 2rem;">
+          <div class="glass-card float-card" style="text-align: left; padding: 2rem;">
             <div style="font-size: 2rem; color: var(--accent-purple); margin-bottom: 1rem;"><i class="fa-solid fa-message"></i></div>
             <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;">LLMs & NLP</h3>
             <p style="font-size: 0.95rem;">
@@ -141,7 +144,7 @@
             </p>
           </div>
           
-          <div class="glass-card" style="text-align: left; padding: 2rem;">
+          <div class="glass-card float-card" style="text-align: left; padding: 2rem;">
             <div style="font-size: 2rem; color: var(--accent-cyan); margin-bottom: 1rem;"><i class="fa-solid fa-network-wired"></i></div>
             <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;">Networking</h3>
             <p style="font-size: 0.95rem;">
@@ -216,6 +219,14 @@
       </div>
     </div>
   </footer>
+
+  <!-- Back to Top -->
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- Background Noise Overlay -->
+  <div class="noise-overlay"></div>
 
   <!-- Scripts -->
   <script src="js/network.js"></script>

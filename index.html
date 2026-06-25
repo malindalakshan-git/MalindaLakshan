@@ -16,6 +16,9 @@
 </head>
 <body>
 
+  <!-- Scroll Progress Bar -->
+  <div id="scroll-progress" class="scroll-progress-bar"></div>
+
   <!-- Background Canvas -->
   <canvas id="network-canvas" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 1;"></canvas>
 
@@ -95,9 +98,9 @@
       </div>
     </section>
     <!-- [01] CORE_MATRIX - Skills Summary -->
-    <section class="core-matrix-section">
+    <section class="core-matrix-section gradient-bg">
       <div class="container">
-        <h2 class="reveal">SKILL_MATRIX</h2>
+        <h2 class="reveal text-shimmer">SKILL_MATRIX</h2>
         <div class="skills-grid">
           <!-- Card 1 -->
           <div class="skill-card skill-card-clickable reveal delay-100" data-skill="core-languages">
@@ -137,7 +140,7 @@
     </section>
 
     <!-- [02] FEATURED_NODES - Highlighted Projects -->
-    <section class="featured-nodes-section">
+    <section class="featured-nodes-section gradient-bg">
       <div class="container">
         <h2 class="reveal">FEATURED_NODES</h2>
         <div class="projects-node-list">
@@ -241,6 +244,14 @@
       <div class="skills-modal-body" id="skills-modal-body"></div>
     </div>
   </div>
+
+  <!-- Back to Top -->
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- Background Noise Overlay -->
+  <div class="noise-overlay"></div>
 
   <!-- Scripts -->
   <script src="js/network.js"></script>

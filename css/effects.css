@@ -1593,3 +1593,477 @@ textarea.form-input {
     font-size: 1.2rem;
   }
 }
+
+/* ========================================================
+   Scroll Progress Bar
+   ======================================================== */
+.scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: var(--gradient-cyber);
+  z-index: 10001;
+  width: 0%;
+  transition: width 0.1s linear;
+  box-shadow: 0 0 12px rgba(var(--accent-cyan-rgb), 0.5), 0 0 24px rgba(var(--accent-cyan-rgb), 0.15);
+}
+
+/* ========================================================
+   Back to Top Button
+   ======================================================== */
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 9997;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--gradient-cyber);
+  border: none;
+  color: var(--bg-primary);
+  font-size: 1.15rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-glow);
+  opacity: 0;
+  transform: translateY(20px) scale(0.8);
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.back-to-top:hover {
+  box-shadow: 0 0 30px rgba(var(--accent-cyan-rgb), 0.5);
+  transform: translateY(-3px);
+}
+
+.back-to-top:active {
+  transform: translateY(0) scale(0.95);
+}
+
+[data-theme="light"] .back-to-top {
+  color: #fff;
+}
+
+/* ========================================================
+   Noise / Grain Texture
+   ======================================================== */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  pointer-events: none;
+  opacity: 0.012;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+
+/* ========================================================
+   3D Card Tilt
+   ======================================================== */
+.tilt-card {
+  perspective: 1000px;
+}
+
+.tilt-card-inner {
+  transition: transform 0.15s cubic-bezier(0.03, 0.98, 0.52, 0.99);
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* ========================================================
+   Magnetic Button
+   ======================================================== */
+.magnetic-btn {
+  transition: transform 0.15s cubic-bezier(0.03, 0.98, 0.52, 0.99);
+  will-change: transform;
+}
+
+/* ========================================================
+   Page Transitions
+   ======================================================== */
+.page-transition-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10002;
+  background: var(--bg-primary);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.page-transition-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ========================================================
+   Image Clip Reveal on Scroll
+   ======================================================== */
+.reveal-img {
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  transition: clip-path 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: clip-path;
+}
+
+.reveal-img.active {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+/* ========================================================
+   Enhanced Staggered Entrance
+   ======================================================== */
+.stagger-100 { transition-delay: 100ms !important; }
+.stagger-150 { transition-delay: 150ms !important; }
+.stagger-200 { transition-delay: 200ms !important; }
+.stagger-250 { transition-delay: 250ms !important; }
+.stagger-300 { transition-delay: 300ms !important; }
+.stagger-350 { transition-delay: 350ms !important; }
+.stagger-400 { transition-delay: 400ms !important; }
+.stagger-450 { transition-delay: 450ms !important; }
+.stagger-500 { transition-delay: 500ms !important; }
+
+/* ========================================================
+   Animated Gradient Background for Sections
+   ======================================================== */
+.gradient-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.gradient-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 20% 50%, rgba(var(--accent-cyan-rgb), 0.04) 0%, transparent 60%),
+              radial-gradient(ellipse at 80% 50%, rgba(var(--accent-purple-rgb), 0.03) 0%, transparent 60%);
+  animation: gradient-shift 10s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes gradient-shift {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(10px, -10px) scale(1.05); }
+  100% { transform: translate(-10px, 10px) scale(0.95); }
+}
+
+/* ========================================================
+   Section Divider Gradient
+   ======================================================== */
+.section-divider {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-cyan), var(--accent-purple), transparent);
+  opacity: 0.25;
+  margin: 0;
+  border: none;
+}
+
+/* ========================================================
+   Enhanced Form Interactions
+   ======================================================== */
+.form-input:focus {
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 20px rgba(var(--accent-cyan-rgb), 0.1), 0 0 0 3px rgba(var(--accent-cyan-rgb), 0.08);
+}
+
+.form-input:focus::placeholder {
+  color: transparent;
+}
+
+.subscribe-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.subscribe-btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateX(-100%);
+  transition: transform 0.4s ease;
+}
+
+.subscribe-btn:hover::after {
+  transform: translateX(100%);
+}
+
+/* ========================================================
+   Enhanced Button Hover with Pulse Ring
+   ======================================================== */
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+
+.btn-primary:hover::after {
+  transform: translateX(100%);
+}
+
+.pulse-ring {
+  position: relative;
+}
+
+.pulse-ring::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: inherit;
+  border: 2px solid var(--accent-cyan);
+  opacity: 0;
+  animation: pulse-ring 2s ease-out infinite;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: 0.5; }
+  100% { transform: scale(1.15); opacity: 0; }
+}
+
+/* ========================================================
+   Subtle Glow on Cards Scale
+   ======================================================== */
+.glow-scale {
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.glow-scale:hover {
+  transform: scale(1.02);
+  border-color: rgba(var(--accent-cyan-rgb), 0.3);
+  box-shadow: 0 0 30px rgba(var(--accent-cyan-rgb), 0.06), var(--shadow-card);
+}
+
+/* ========================================================
+   Text Shimmer for Special Headings
+   ======================================================== */
+.text-shimmer {
+  background: linear-gradient(90deg, var(--text-primary) 0%, var(--accent-cyan) 30%, var(--accent-purple) 50%, var(--accent-cyan) 70%, var(--text-primary) 100%);
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 0% center; }
+  100% { background-position: 300% center; }
+}
+
+/* ========================================================
+   Float Animation for Cards
+   ======================================================== */
+.float-card {
+  animation: float-card 6s ease-in-out infinite;
+}
+
+@keyframes float-card {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* ========================================================
+   Skill Fill Enhancements
+   ======================================================== */
+.skill-fill {
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  animation: shimmer-bar 3s ease-in-out infinite;
+}
+
+@keyframes shimmer-bar {
+  0% { left: -100%; }
+  50% { left: 100%; }
+  100% { left: 100%; }
+}
+
+/* ========================================================
+   Glass Card Border Glow Enhancement
+   ======================================================== */
+.glass-card::before {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.04), transparent);
+  transition: left 0.6s ease;
+}
+
+[data-theme="light"] .glass-card::before {
+  background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.03), transparent);
+}
+
+/* ========================================================
+   Responsive Adjustments for New Effects
+   ======================================================== */
+@media (max-width: 768px) {
+  .back-to-top {
+    bottom: 1.25rem;
+    right: 1.25rem;
+    width: 38px;
+    height: 38px;
+    font-size: 1rem;
+  }
+
+  .page-transition-overlay {
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@media (max-width: 480px) {
+  .back-to-top {
+    bottom: 1rem;
+    right: 1rem;
+    width: 34px;
+    height: 34px;
+    font-size: 0.9rem;
+  }
+
+  .noise-overlay {
+    display: none;
+  }
+}
+
+/* ========================================================
+   Enhanced Responsive Breakpoints
+   ======================================================== */
+
+@media (max-width: 768px) {
+  .research-card-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .nn-container {
+    height: 160px;
+    padding: 0.75rem 1.5rem;
+  }
+
+  .nn-node {
+    width: 24px;
+    height: 24px;
+    font-size: 0.65rem;
+  }
+
+  .nn-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .nn-status-panel {
+    text-align: center;
+  }
+
+  .terminal-window {
+    width: 92%;
+  }
+
+  .terminal-body {
+    padding: 1rem;
+    font-size: 0.8rem;
+    min-height: 120px;
+  }
+
+  .portfolio-img-wrapper {
+    max-width: 320px;
+  }
+
+  .glass-card {
+    padding: 1.5rem;
+  }
+
+  .timeline-container {
+    padding-left: 1.5rem;
+  }
+
+  .timeline-dot {
+    left: -1.5rem;
+    width: 16px;
+    height: 16px;
+  }
+
+  .filter-btn {
+    font-size: 0.85rem;
+    padding: 0.4rem 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-glow-blob { width: 200px; height: 200px; filter: blur(25px); }
+  .hero-glow-blob-2 { width: 240px; height: 240px; filter: blur(30px); }
+}
+
+@media (max-width: 480px) {
+  .hero-images-wrapper {
+    min-height: 260px;
+  }
+
+  .hero-image-main {
+    width: 180px;
+  }
+
+  .hero-image-secondary {
+    width: 100px;
+    bottom: 5px;
+    right: 15px;
+  }
+
+  .glass-card {
+    padding: 1.25rem;
+    border-radius: 12px;
+  }
+
+  .portfolio-img-wrapper {
+    max-width: 260px;
+  }
+
+  .terminal-window {
+    width: 96%;
+  }
+
+  .terminal-body {
+    padding: 0.75rem;
+    font-size: 0.75rem;
+    min-height: 100px;
+  }
+
+  .modal-body {
+    padding: 1.25rem;
+  }
+
+  .modal-project-title {
+    font-size: 1.2rem;
+  }
+
+  .skills-modal-container {
+    padding: 1.25rem;
+  }
+
+  .project-modal-container {
+    border-radius: 12px 12px 0 0;
+  }
+}

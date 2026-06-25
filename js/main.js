@@ -251,6 +251,131 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // 7. Scroll Progress Bar
+  const progressBar = document.getElementById('scroll-progress');
+  if (progressBar) {
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      if (docHeight > 0) {
+        progressBar.style.width = (scrollTop / docHeight) * 100 + '%';
+      }
+    });
+  }
+
+  // 8. Back to Top Button
+  const backToTop = document.getElementById('back-to-top');
+  if (backToTop) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 500) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  // 9. 3D Card Tilt Effect
+  const tiltCards = document.querySelectorAll('.glass-card, .skill-card, .project-card, .project-node-card');
+  tiltCards.forEach(card => {
+    card.classList.add('tilt-card-inner');
+    const parent = document.createElement('div');
+    parent.className = 'tilt-card';
+    card.parentNode.insertBefore(parent, card);
+    parent.appendChild(card);
+
+    parent.addEventListener('mousemove', (e) => {
+      const rect = parent.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const rotateX = ((y - centerY) / centerY) * -6;
+      const rotateY = ((x - centerX) / centerX) * 6;
+      card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+    });
+
+    parent.addEventListener('mouseleave', () => {
+      card.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
+    });
+  });
+
+  // 10. Magnetic Button Effect
+  const magneticBtns = document.querySelectorAll('.btn-primary, .btn-secondary, .node-btn, .filter-btn');
+  magneticBtns.forEach(btn => {
+    btn.classList.add('magnetic-btn');
+    btn.addEventListener('mousemove', (e) => {
+      const rect = btn.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      const dist = Math.sqrt(x * x + y * y);
+      const maxDist = 150;
+      if (dist < maxDist) {
+        const strength = 0.25;
+        const moveX = x * strength;
+        const moveY = y * strength;
+        btn.style.transform = `translate(${moveX}px, ${moveY}px)`;
+      }
+    });
+
+    btn.addEventListener('mouseleave', () => {
+      btn.style.transform = '';
+    });
+  });
+
+  // 11. Page Transitions
+  const transitionOverlay = document.createElement('div');
+  transitionOverlay.className = 'page-transition-overlay';
+  transitionOverlay.id = 'page-transition-overlay';
+  document.body.appendChild(transitionOverlay);
+
+  document.querySelectorAll('a:not([target="_blank"]):not([href^="#"]):not([href^="mailto"]):not([href^="tel"]):not([href^="javascript"])').forEach(link => {
+    const href = link.getAttribute('href');
+    if (!href || href.startsWith('http') || href.startsWith('//')) return;
+    link.addEventListener('click', (e) => {
+      if (e.ctrlKey || e.metaKey || e.shiftKey) return;
+      e.preventDefault();
+      const target = href;
+      transitionOverlay.classList.add('active');
+      setTimeout(() => {
+        window.location.href = target;
+      }, 400);
+    });
+  });
+
+  // 12. Image Clip Reveal
+  const revealImages = document.querySelectorAll('.reveal-img');
+  const imgObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        imgObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  revealImages.forEach(img => imgObserver.observe(img));
+
+  // 13. Smooth Anchor Scrolling
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', (e) => {
+      const targetId = anchor.getAttribute('href');
+      if (targetId === '#') return;
+      const targetEl = document.querySelector(targetId);
+      if (targetEl) {
+        e.preventDefault();
+        const headerOffset = 90;
+        const elementPosition = targetEl.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.scrollY - headerOffset;
+        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+      }
+    });
+  });
 });
 
 

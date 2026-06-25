@@ -14,6 +14,9 @@
 </head>
 <body>
 
+  <!-- Scroll Progress Bar -->
+  <div id="scroll-progress" class="scroll-progress-bar"></div>
+
   <canvas id="network-canvas" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 1;"></canvas>
 
   <div class="hero-glow-blob"></div>
@@ -49,7 +52,7 @@
   <div class="nav-overlay" id="nav-overlay"></div>
 
   <main style="z-index: 2; position: relative;">
-    <section style="min-height: calc(100vh - var(--nav-height) - 300px); display: flex; align-items: center; padding: 2rem 0;">
+    <section class="gradient-bg" style="min-height: calc(100vh - var(--nav-height) - 300px); display: flex; align-items: center; padding: 2rem 0;">
       <div class="container">
         <div style="text-align: center; margin-bottom: 4rem;">
           <h2>Contact Me</h2>
@@ -58,12 +61,12 @@
           </p>
         </div>
 
-        <div style="display: flex; gap: 2rem; width: 100%; flex-wrap: wrap; align-items: flex-start;">
+        <div class="contact-grid" style="display: flex; gap: 2rem; width: 100%; flex-wrap: wrap; align-items: flex-start;">
           
-          <div class="reveal" style="flex: 1; min-width: 320px; display: flex; flex-direction: column; gap: 1.5rem;">
+          <div class="reveal contact-info-col" style="flex: 1; min-width: 300px; display: flex; flex-direction: column; gap: 1.5rem;">
             <h3 style="color: var(--accent-cyan); margin-bottom: 0.5rem;">Contact Information</h3>
             
-            <div class="glass-card" style="padding: 1.5rem; display: flex; gap: 1.5rem; align-items: center;" id="vector-email">
+            <div class="glass-card float-card" style="padding: 1.5rem; display: flex; gap: 1.5rem; align-items: center;" id="vector-email">
               <div style="font-size: 1.8rem; color: var(--accent-cyan); width: 50px; text-align: center;">
                 <i class="fa-regular fa-envelope"></i>
               </div>
@@ -73,7 +76,7 @@
               </div>
             </div>
 
-            <div class="glass-card" style="padding: 1.5rem; display: flex; gap: 1.5rem; align-items: center;" id="vector-whatsapp">
+            <div class="glass-card float-card" style="padding: 1.5rem; display: flex; gap: 1.5rem; align-items: center;" id="vector-whatsapp">
               <div style="font-size: 1.8rem; color: var(--accent-cyan); width: 50px; text-align: center;">
                 <i class="fa-brands fa-whatsapp"></i>
               </div>
@@ -83,7 +86,7 @@
               </div>
             </div>
         
-            <div class="glass-card" style="padding: 1.5rem; display: flex; gap: 1.5rem; align-items: center;" id="vector-networks">
+            <div class="glass-card float-card" style="padding: 1.5rem; display: flex; gap: 1.5rem; align-items: center;" id="vector-networks">
               <div style="font-size: 1.8rem; color: #e60000; width: 50px; text-align: center;">
                 <i class="fa-solid fa-code"></i>
               </div>
@@ -100,7 +103,7 @@
               </div>
             </div>
             
-            <div class="glass-card" style="padding: 1.5rem; display: flex; gap: 1.5rem; align-items: center;" id="vector-youtube">
+            <div class="glass-card float-card" style="padding: 1.5rem; display: flex; gap: 1.5rem; align-items: center;" id="vector-youtube">
               <div style="font-size: 1.8rem; color: #ff0000; width: 50px; text-align: center;">
                   <i class="fa-brands fa-youtube"></i> 
               </div>
@@ -113,7 +116,7 @@
             </div>
           </div>
 
-          <div class="reveal delay-200" style="flex: 1; min-width: 320px; position: relative;">
+          <div class="reveal delay-200 contact-form-col" style="flex: 1; min-width: 300px; position: relative;">
             
             <div class="terminal-overlay" id="terminal-overlay">
               <div class="terminal-window">
@@ -224,6 +227,14 @@
       </div>
     </div>
   </footer>
+
+  <!-- Back to Top -->
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- Background Noise Overlay -->
+  <div class="noise-overlay"></div>
 
   <script src="js/network.js"></script>
   <script src="js/main.js"></script>

@@ -23,6 +23,9 @@
 </head>
 <body>
 
+  <!-- Scroll Progress Bar -->
+  <div id="scroll-progress" class="scroll-progress-bar"></div>
+
   <!-- Background Canvas -->
   <canvas id="network-canvas" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 1;"></canvas>
 
@@ -62,7 +65,7 @@
 
   <!-- Main Content -->
   <main style="z-index: 2; position: relative;">
-    <section id="neuro-sim">
+    <section id="neuro-sim" class="gradient-bg">
       <div class="container">
         <div style="text-align: center; margin-bottom: 3rem;">
           <h2>Technical Projects</h2>
@@ -82,7 +85,7 @@
           
           <!-- Project 1 -->
           <div class="project-card-wrapper" data-category="SBS" id="cognitive-bot" data-project="school-bell">
-            <div class="glass-card project-card project-card-clickable">
+            <div class="glass-card project-card project-card-clickable float-card">
               <div class="project-click-hint"><i class="fa-solid fa-expand"></i> View Details</div>
               <div style="font-size: 2.2rem; color: var(--accent-cyan); margin-bottom: 1.2rem;">
                 <i class="fa-regular fa-bell"></i>
@@ -303,6 +306,14 @@
       </div>
     </div>
   </div>
+
+  <!-- Back to Top -->
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- Background Noise Overlay -->
+  <div class="noise-overlay"></div>
 
   <!-- Scripts -->
   <script src="js/network.js"></script>

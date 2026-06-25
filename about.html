@@ -16,6 +16,9 @@
 </head>
 <body>
 
+  <!-- Scroll Progress Bar -->
+  <div id="scroll-progress" class="scroll-progress-bar"></div>
+
   <!-- Background Canvas -->
   <canvas id="network-canvas" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 1;"></canvas>
 
@@ -94,7 +97,7 @@
     </section>
 
     <!-- Skills Section -->
-    <section style="background-color: var(--section-alt-bg); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+    <section class="gradient-bg" style="background-color: var(--section-alt-bg); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
       <div class="container">
         <div style="text-align: center; margin-bottom: 4rem;">
           <h2>My Skills</h2>
@@ -148,14 +151,14 @@
     </section>
 
     <!-- Interests Section -->
-    <section>
+    <section class="gradient-bg">
       <div class="container">
         <div style="text-align: center; margin-bottom: 4rem;">
-          <h2>What I Focus On</h2>
+          <h2 class="text-shimmer">What I Focus On</h2>
         </div>
 
         <div class="grid-3 reveal">
-          <div class="glass-card" style="text-align: center; padding: 2rem;">
+          <div class="glass-card float-card" style="text-align: center; padding: 2rem;">
             <div style="font-size: 2.5rem; color: var(--accent-cyan); margin-bottom: 1rem;"><i class="fa-solid fa-code"></i></div>
             <h3 style="margin-bottom: 0.75rem;">Programming</h3>
             <p style="font-size: 0.95rem;">
@@ -163,7 +166,7 @@
             </p>
           </div>
 
-          <div class="glass-card" style="text-align: center; padding: 2rem;">
+          <div class="glass-card float-card" style="text-align: center; padding: 2rem;">
             <div style="font-size: 2.5rem; color: var(--accent-purple); margin-bottom: 1rem;"><i class="fa-solid fa-paintbrush"></i></div>
             <h3 style="margin-bottom: 0.75rem;">Art & Design</h3>
             <p style="font-size: 0.95rem;">
@@ -171,7 +174,7 @@
             </p>
           </div>
 
-          <div class="glass-card" style="text-align: center; padding: 2rem;">
+          <div class="glass-card float-card" style="text-align: center; padding: 2rem;">
             <div style="font-size: 2.5rem; color: var(--accent-cyan); margin-bottom: 1rem;"><i class="fa-solid fa-lightbulb"></i></div>
             <h3 style="margin-bottom: 0.75rem;">Logic & Learning</h3>
             <p style="font-size: 0.95rem;">
@@ -246,6 +249,14 @@
       </div>
     </div>
   </footer>
+
+  <!-- Back to Top -->
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- Background Noise Overlay -->
+  <div class="noise-overlay"></div>
 
   <!-- Scripts -->
   <script src="js/network.js"></script>
