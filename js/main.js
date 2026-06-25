@@ -123,13 +123,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   revealElements.forEach(el => revealObserver.observe(el));
 
-  // Function to animate skill fills
+  // Function to animate skill fills (legacy - kept for observer compatibility)
   function animateSkillBars() {
-    const skillFills = document.querySelectorAll('.skill-fill');
-    skillFills.forEach(fill => {
-      const percentage = fill.getAttribute('data-percent');
-      fill.style.width = percentage + '%';
-    });
+    // Skills are now displayed as glass cards — no animation needed
   }
 
   // 6. Contact Form - Terminal & Web3Forms Submission
@@ -219,6 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <button onclick="window.location.reload()" class="btn btn-secondary" style="margin-top: 2rem;">Send Another Transmission</button>
                   </div>
                 `;
+                if (typeof createToast === 'function') createToast('Message sent successfully!', 'success');
               }, 1200);
             } else {
               const errLine = document.createElement('div');
@@ -229,6 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
               setTimeout(() => {
                 terminalOverlay.classList.remove('active');
+                if (typeof createToast === 'function') createToast('Transmission failed. Please try again.', 'error', 5000);
               }, 2500);
             }
           }
@@ -245,6 +243,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             setTimeout(() => {
               terminalOverlay.classList.remove('active');
+              if (typeof createToast === 'function') createToast('Network error. Check your connection.', 'error', 5000);
             }, 2500);
           }
         }, 100);
@@ -375,6 +374,141 @@ document.addEventListener('DOMContentLoaded', () => {
         window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
       }
     });
+  });
+
+  // 14. Page Load Entrance Animation
+  const entranceElements = document.querySelectorAll('.entrance, .entrance-left, .entrance-right, .entrance-scale');
+  if (entranceElements.length > 0) {
+    setTimeout(() => {
+      entranceElements.forEach((el, i) => {
+        setTimeout(() => {
+          el.classList.add('active');
+        }, i * 80);
+      });
+    }, 150);
+  }
+
+  // 15. Toast Notification System
+  function createToast(message, type, duration) {
+    type = type || 'info';
+    duration = duration || 4000;
+
+    let container = document.querySelector('.toast-container');
+    if (!container) {
+      container = document.createElement('div');
+      container.className = 'toast-container';
+      document.body.appendChild(container);
+    }
+
+    const icons = {
+      success: 'fa-solid fa-check-circle',
+      error: 'fa-solid fa-exclamation-circle',
+      info: 'fa-solid fa-info-circle'
+    };
+
+    const toast = document.createElement('div');
+    toast.className = 'toast ' + type;
+    toast.innerHTML =
+      '<span class="toast-icon"><i class="' + (icons[type] || icons.info) + '"></i></span>' +
+      '<span class="toast-message">' + message + '</span>' +
+      '<button class="toast-close" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>';
+
+    container.appendChild(toast);
+
+    requestAnimationFrame(() => {
+      toast.classList.add('visible');
+    });
+
+    const closeBtn = toast.querySelector('.toast-close');
+    closeBtn.addEventListener('click', () => removeToast(toast));
+
+    if (duration > 0) {
+      setTimeout(() => removeToast(toast), duration);
+    }
+
+    return toast;
+  }
+
+  function removeToast(toast) {
+    toast.classList.remove('visible');
+    setTimeout(() => {
+      if (toast.parentNode) {
+        toast.parentNode.removeChild(toast);
+      }
+    }, 400);
+  }
+
+  window.createToast = createToast;
+
+  // Hook into contact form success
+  const origSuccess = document.querySelector('.terminal-overlay');
+  if (!origSuccess) {
+    const contactFormEl = document.getElementById('contact-form');
+    if (contactFormEl) {
+      const origSubmit = contactFormEl._origSubmit;
+    }
+  }
+
+  // 16. Keyboard Shortcuts
+  const shortcutsModal = document.createElement('div');
+  shortcutsModal.className = 'shortcuts-modal-overlay';
+  shortcutsModal.id = 'shortcuts-modal';
+  shortcutsModal.innerHTML =
+    '<div class="shortcuts-modal">' +
+    '<button class="skills-modal-close" id="shortcuts-close" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>' +
+    '<h3>Keyboard Shortcuts</h3>' +
+    '<div class="shortcut-row"><span class="shortcut-desc">Toggle theme</span><span class="shortcut-key">T</span></div>' +
+    '<div class="shortcut-row"><span class="shortcut-desc">Close modals</span><span class="shortcut-key">Esc</span></div>' +
+    '<div class="shortcut-row"><span class="shortcut-desc">Show shortcuts</span><span class="shortcut-key">?</span></div>' +
+    '<div class="shortcut-row"><span class="shortcut-desc">Back to top</span><span class="shortcut-key">Shift + T</span></div>' +
+    '</div>';
+  document.body.appendChild(shortcutsModal);
+
+  document.getElementById('shortcuts-close').addEventListener('click', () => {
+    shortcutsModal.classList.remove('active');
+  });
+
+  shortcutsModal.addEventListener('click', (e) => {
+    if (e.target === shortcutsModal) shortcutsModal.classList.remove('active');
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+
+    if (e.key === 't' || e.key === 'T') {
+      if (!e.shiftKey && !e.ctrlKey && !e.metaKey) {
+        e.preventDefault();
+        document.getElementById('theme-toggle').click();
+      }
+    }
+
+    if (e.key === '?') {
+      e.preventDefault();
+      shortcutsModal.classList.toggle('active');
+      document.body.style.overflow = shortcutsModal.classList.contains('active') ? 'hidden' : '';
+    }
+
+    if (e.key === 'Escape') {
+      shortcutsModal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+
+  // 17. Image Load Effect
+  document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+    img.style.filter = 'blur(10px)';
+    img.style.opacity = '0.5';
+    if (img.complete) {
+      img.classList.add('loaded');
+      img.style.filter = 'none';
+      img.style.opacity = '1';
+    } else {
+      img.addEventListener('load', () => {
+        img.classList.add('loaded');
+        img.style.filter = 'none';
+        img.style.opacity = '1';
+      });
+    }
   });
 });
 

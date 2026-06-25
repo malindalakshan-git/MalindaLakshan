@@ -5,6 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Biography, academic milestones, core skill indices, and research experience of Malinda Lakshan. Learn more about his path in Artificial Intelligence.">
   <meta name="author" content="Malinda Lakshan">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23d80706'/%3E%3Ctext x='16' y='21' text-anchor='middle' fill='white' font-size='13' font-weight='bold' font-family='Arial'%3EML%3C/text%3E%3C/svg%3E">
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://malindalakshan.github.io/about.html">
+  <meta property="og:title" content="About Me | Malinda Lakshan">
+  <meta property="og:description" content="Biography, academic milestones, core skill indices, and research experience of Malinda Lakshan. Learn more about his path in Artificial Intelligence.">
+  <meta property="og:image" content="assets/malinda_about.jpeg">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="About Me | Malinda Lakshan">
+  <meta property="twitter:description" content="Biography, academic milestones, and research experience of Malinda Lakshan.">
+  <meta property="twitter:image" content="assets/malinda_about.jpeg">
+
   <title>About Me | Malinda Lakshan</title>
   
   <!-- CSS files -->
@@ -15,6 +30,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+
+  <!-- Skip to Content Link -->
+  <a href="#main-content" class="skip-link">Skip to content</a>
 
   <!-- Scroll Progress Bar -->
   <div id="scroll-progress" class="scroll-progress-bar"></div>
@@ -57,7 +75,7 @@
   <div class="nav-overlay" id="nav-overlay"></div>
 
   <!-- Main Content -->
-  <main style="z-index: 2; position: relative;">
+  <main id="main-content" style="z-index: 2; position: relative;">
     <!-- Profile & Bio Section -->
     <section>
       <div class="container">
@@ -69,7 +87,7 @@
           <!-- Portrait photo -->
           <div class="reveal" style="display: flex; align-items: center; justify-content: center;">
             <div class="portfolio-img-wrapper glow-border">
-              <img src="assets/malinda_about.jpeg" alt="Malinda Lakshan Portrait">
+              <img src="assets/malinda_about.jpeg" alt="Malinda Lakshan Portrait" loading="lazy">
               <div class="portfolio-img-glow-overlay"></div>
             </div>
           </div>
@@ -106,45 +124,85 @@
           </p>
         </div>
         
-        <div class="grid-2 reveal skills-container" id="skills-section">
-          <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-            <div class="skill-bar-wrapper">
-              <div class="skill-name-row">
-                <span><i class="fa-brands fa-python" style="color: var(--accent-cyan);"></i> Python Development</span>
-              </div>
-              <div class="skill-track">
-                <div class="skill-fill" data-percent="85"></div>
-              </div>
+        <div class="skills-grid reveal" id="skills-section">
+          <div class="glass-card skill-card">
+            <div class="skill-icon-box" style="color: var(--accent-cyan);">
+              <i class="fa-brands fa-python"></i>
             </div>
-            
-            <div class="skill-bar-wrapper">
-              <div class="skill-name-row">
-                <span><i class="fa-solid fa-language" style="color: var(--accent-cyan);"></i> English Language</span>
-              </div>
-              <div class="skill-track">
-                <div class="skill-fill" data-percent="70"></div>
-              </div>
-            </div>
+            <h3 class="skill-card-title">Python</h3>
+            <span class="skill-tag">Backend & Automation</span>
           </div>
-          
-          <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-            <div class="skill-bar-wrapper">
-              <div class="skill-name-row">
-                <span><i class="fa-solid fa-palette" style="color: var(--accent-cyan);"></i> Painting & Designing</span>
-              </div>
-              <div class="skill-track">
-                <div class="skill-fill" data-percent="80"></div>
-              </div>
+
+          <div class="glass-card skill-card">
+            <div class="skill-icon-box" style="color: var(--accent-purple);">
+              <i class="fa-solid fa-robot"></i>
             </div>
-            
-            <div class="skill-bar-wrapper">
-              <div class="skill-name-row">
-                <span><i class="fa-solid fa-brain" style="color: var(--accent-cyan);"></i> Logical Thinking</span>
-              </div>
-              <div class="skill-track">
-                <div class="skill-fill" data-percent="90"></div>
-              </div>
+            <h3 class="skill-card-title">AI & ML</h3>
+            <span class="skill-tag">Intelligent Systems</span>
+          </div>
+
+          <div class="glass-card skill-card">
+            <div class="skill-icon-box" style="color: var(--accent-cyan);">
+              <i class="fa-solid fa-code"></i>
             </div>
+            <h3 class="skill-card-title">Web Development</h3>
+            <span class="skill-tag">Full Stack</span>
+          </div>
+
+          <div class="glass-card skill-card">
+            <div class="skill-icon-box" style="color: var(--accent-purple);">
+              <i class="fa-brands fa-html5"></i>
+            </div>
+            <h3 class="skill-card-title">HTML5 & CSS3</h3>
+            <span class="skill-tag">Responsive Layouts</span>
+          </div>
+
+          <div class="glass-card skill-card">
+            <div class="skill-icon-box" style="color: var(--accent-cyan);">
+              <i class="fa-solid fa-pen-ruler"></i>
+            </div>
+            <h3 class="skill-card-title">UI/UX Design</h3>
+            <span class="skill-tag">User-Centered</span>
+          </div>
+
+          <div class="glass-card skill-card">
+            <div class="skill-icon-box" style="color: var(--accent-purple);">
+              <i class="fa-solid fa-microchip"></i>
+            </div>
+            <h3 class="skill-card-title">Hardware</h3>
+            <span class="skill-tag">Troubleshooting & Builds</span>
+          </div>
+
+          <div class="glass-card skill-card">
+            <div class="skill-icon-box" style="color: var(--accent-cyan);">
+              <i class="fa-solid fa-palette"></i>
+            </div>
+            <h3 class="skill-card-title">Web Designing</h3>
+            <span class="skill-tag">Creative Interfaces</span>
+          </div>
+
+          <div class="glass-card skill-card">
+            <div class="skill-icon-box" style="color: var(--accent-purple);">
+              <i class="fa-brands fa-js"></i>
+            </div>
+            <h3 class="skill-card-title">JavaScript</h3>
+            <span class="skill-tag">Interactive Frontend</span>
+          </div>
+
+          <div class="glass-card skill-card">
+            <div class="skill-icon-box" style="color: var(--accent-cyan);">
+              <i class="fa-solid fa-cubes"></i>
+            </div>
+            <h3 class="skill-card-title">Adobe Suite</h3>
+            <span class="skill-tag">Graphic Design</span>
+          </div>
+
+          <div class="glass-card skill-card">
+            <div class="skill-icon-box" style="color: var(--accent-purple);">
+              <i class="fa-solid fa-video"></i>
+            </div>
+            <h3 class="skill-card-title">Video Editing</h3>
+            <span class="skill-tag">Post-Production</span>
           </div>
         </div>
       </div>

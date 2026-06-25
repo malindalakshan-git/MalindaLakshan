@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Page not found - Malinda Lakshan Portfolio">
+  <meta name="author" content="Malinda Lakshan">
+  <title>404 - Page Not Found | Malinda Lakshan</title>
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23d80706'/%3E%3Ctext x='16' y='21' text-anchor='middle' fill='white' font-size='13' font-weight='bold' font-family='Arial'%3EML%3C/text%3E%3C/svg%3E">
+
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/effects.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
+  <div id="scroll-progress" class="scroll-progress-bar"></div>
+
+  <canvas id="network-canvas" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 1;"></canvas>
+
+  <div class="hero-glow-blob"></div>
+  <div class="hero-glow-blob-2"></div>
+
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo" id="header-logo">
+        <span class="logo-text">MALINDA LAKSHAN</span><span class="logo-dot"></span>
+      </a>
+      <button class="hamburger" id="nav-toggle" aria-label="Toggle Navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="index.html">Home</a></li>
+        <li class="nav-item"><a href="about.html">About</a></li>
+        <li class="nav-item"><a href="research.html">Research</a></li>
+        <li class="nav-item"><a href="projects.html">Projects</a></li>
+        <li class="nav-item nav-item-cta"><a href="contact.html">Contact<span class="nav-cta-dot"></span></a></li>
+        <li class="nav-item" style="list-style: none;">
+          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+            <i class="fa-solid fa-sun icon-sun"></i>
+            <i class="fa-solid fa-moon icon-moon"></i>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <div class="nav-overlay" id="nav-overlay"></div>
+
+  <main id="main-content" style="z-index: 2; position: relative;">
+    <section class="error-section">
+      <div class="container">
+        <div class="entrance" style="text-align: center;">
+          <div class="error-code">404</div>
+          <h1 class="error-title">Signal Lost</h1>
+          <p class="error-desc">
+            The neural pathway you followed leads to uncharted territory. This page doesn't exist or has been disconnected from the network.
+          </p>
+          <div class="error-actions">
+            <a href="index.html" class="btn btn-primary">
+              <i class="fa-solid fa-arrow-left"></i> Return to Base
+            </a>
+            <a href="projects.html" class="btn btn-secondary">
+              <i class="fa-solid fa-grid-2"></i> Explore Projects
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <a href="index.html" class="logo footer-logo">
+            <span class="logo-text">MALINDA LAKSHAN</span><span class="logo-dot"></span>
+          </a>
+          <p class="footer-desc">
+            AI student and researcher specialized in deep learning, neural network engineering, and autonomous architectures.
+          </p>
+          <div class="footer-socials">
+            <a href="https://github.com/malindalakshan-git" class="social-icon" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/malinda-lakshan-80937a413/" class="social-icon" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="mailto:malindalakshanbro@gmail.com" class="social-icon" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
+          </div>
+        </div>
+        
+        <div>
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="research.html">Research Work</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact Nodes</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-heading">Core Areas</h4>
+          <ul class="footer-links">
+            <li><a href="research.html#transformer-networks">Buddhist Philosophy</a></li>
+            <li><a href="research.html#computer-vision">Philosophy of Mind</a></li>
+            <li><a href="about.html#skills-section">Python Development</a></li>
+            <li><a href="projects.html">School Bell System</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-subscribe">
+          <h4 class="footer-heading">Node Connection</h4>
+          <p>Subscribe to receive updates on my recent publications and code releases.</p>
+          <form class="subscribe-form" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="13e8e991-9d7e-4a86-88db-58048e05e40c">
+            <input type="hidden" name="subject" value="New Newsletter Subscriber from Portfolio">
+            <input type="checkbox" name="botcheck" style="display: none;">
+            <input type="email" name="email" placeholder="your.email@gmail.com" class="subscribe-input" required aria-label="Email Address">
+            <button type="submit" class="subscribe-btn" aria-label="Submit Subscription"><i class="fa-solid fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Malinda Lakshan. All rights reserved. Designed for cutting-edge AI environments.
+        </div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="#">Privacy Protocol</a>
+          <a href="#">Terms of Access</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <div class="noise-overlay"></div>
+
+  <script src="js/network.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

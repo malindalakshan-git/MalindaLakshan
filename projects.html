@@ -5,6 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Technical portfolio, deep learning systems, computer vision libraries, and open-source packages created by Malinda Lakshan.">
   <meta name="author" content="Malinda Lakshan">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23d80706'/%3E%3Ctext x='16' y='21' text-anchor='middle' fill='white' font-size='13' font-weight='bold' font-family='Arial'%3EML%3C/text%3E%3C/svg%3E">
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://malindalakshan.github.io/projects.html">
+  <meta property="og:title" content="Projects | Malinda Lakshan">
+  <meta property="og:description" content="Technical portfolio, deep learning systems, computer vision libraries, and open-source packages created by Malinda Lakshan.">
+  <meta property="og:image" content="assets/project-screenshots/school-bell/02_main_dashboard.png">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="Projects | Malinda Lakshan">
+  <meta property="twitter:description" content="Technical portfolio and open-source packages created by Malinda Lakshan.">
+  <meta property="twitter:image" content="assets/project-screenshots/school-bell/02_main_dashboard.png">
+
   <title>Projects | Malinda Lakshan</title>
   
   <!-- CSS files -->
@@ -22,6 +37,9 @@
   </style>
 </head>
 <body>
+
+  <!-- Skip to Content Link -->
+  <a href="#main-content" class="skip-link">Skip to content</a>
 
   <!-- Scroll Progress Bar -->
   <div id="scroll-progress" class="scroll-progress-bar"></div>
@@ -64,20 +82,14 @@
   <div class="nav-overlay" id="nav-overlay"></div>
 
   <!-- Main Content -->
-  <main style="z-index: 2; position: relative;">
+  <main id="main-content" style="z-index: 2; position: relative;">
     <section id="neuro-sim" class="gradient-bg">
       <div class="container">
         <div style="text-align: center; margin-bottom: 3rem;">
           <h2>Technical Projects</h2>
           <p style="max-width: 600px; margin: 1rem auto 0 auto;" class="reveal">
-            Engineering software utilities, visual simulators, and open-source libraries focused on advanced machine learning.
+            Engineering desktop utilities, automation systems, and practical tools using Python and modern GUI frameworks.
           </p>
-        </div>
-
-        <!-- Filter Bar -->
-        <div class="portfolio-filter-bar reveal">
-          <button class="filter-btn active" data-filter="all">All Projects</button>
-          <button class="filter-btn" data-filter="SBS">Python</button>
         </div>
 
         <!-- Projects Grid -->
@@ -104,113 +116,6 @@
               </div>
             </div>
           </div>
-
-          <!-- Project 2 -->
-          <!-- <div class="project-card-wrapper" data-category="nlp" id="proj-cogbot">
-            <div class="glass-card project-card">
-              <div style="font-size: 2.2rem; color: var(--accent-purple); margin-bottom: 1.2rem;">
-                <i class="fa-solid fa-robot"></i>
-              </div>
-              <h3>CognitiveAgent Bot</h3>
-              <p>
-                A local autonomous agent utilizing vector databases (ChromaDB) to manage retrieval-augmented generation. Outfitted with state management and recursive feedback nodes.
-              </p>
-              <div class="project-tags">
-                <span class="research-tag">Python</span>
-                <span class="research-tag">FastAPI</span>
-                <span class="research-tag">LLMs</span>
-              </div>
-              <div class="project-links">
-                <a href="https://github.com" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.85rem;"><i class="fa-brands fa-github"></i> Source Code</a>
-                <a href="#" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.85rem;"><i class="fa-solid fa-book"></i> Docs</a>
-              </div>
-            </div>
-          </div> -->
-
-          <!-- Project 3 -->
-          <!-- <div class="project-card-wrapper" data-category="cv" id="proj-visiondepth">
-            <div class="glass-card project-card">
-              <div style="font-size: 2.2rem; color: var(--accent-cyan); margin-bottom: 1.2rem;">
-                <i class="fa-solid fa-cube"></i>
-              </div>
-              <h3>VisionDepth Network</h3>
-              <p>
-                Monocular depth mapping system built on customized CNN filters. Estimates spatial structures from standard video feeds in real-time, outputting colored pixel depth arrays.
-              </p>
-              <div class="project-tags">
-                <span class="research-tag">PyTorch</span>
-                <span class="research-tag">CNNs</span>
-                <span class="research-tag">OpenCV</span>
-              </div>
-              <div class="project-links">
-                <a href="https://github.com" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.85rem;"><i class="fa-brands fa-github"></i> Code Base</a>
-                <a href="#" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.85rem;"><i class="fa-solid fa-chart-bar"></i> Benchmarks</a>
-              </div>
-            </div>
-          </div> -->
-
-          <!-- Project 4 -->
-          <!-- <div class="project-card-wrapper" data-category="dl" id="proj-sparseattn">
-            <div class="glass-card project-card">
-              <div style="font-size: 2.2rem; color: var(--accent-purple); margin-bottom: 1.2rem;">
-                <i class="fa-solid fa-share-nodes"></i>
-              </div>
-              <h3>Sparse Attention Layer</h3>
-              <p>
-                A high-speed, custom LibTorch C++ extension designed for transformer nodes. Restructures multi-head queries to execute operations via sparse indices, bypassing dense matrix routes.
-              </p>
-              <div class="project-tags">
-                <span class="research-tag">C++</span>
-                <span class="research-tag">CUDA</span>
-                <span class="research-tag">LibTorch</span>
-              </div>
-              <div class="project-links">
-                <a href="https://github.com" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.85rem;"><i class="fa-brands fa-github"></i> Code Library</a>
-              </div>
-            </div>
-          </div> -->
-
-          <!-- Project 5 -->
-          <!-- <div class="project-card-wrapper" data-category="nlp" id="proj-robonav">
-            <div class="glass-card project-card">
-              <div style="font-size: 2.2rem; color: var(--accent-cyan); margin-bottom: 1.2rem;">
-                <i class="fa-solid fa-gamepad"></i>
-              </div>
-              <h3>RoboNav Gymnasium</h3>
-              <p>
-                A custom Gymnasium environment designed for training reinforcement learning agents. Simulates laser ranges and map structures to teach navigation pathways.
-              </p>
-              <div class="project-tags">
-                <span class="research-tag">Python</span>
-                <span class="research-tag">Gymnasium</span>
-                <span class="research-tag">PPO</span>
-              </div>
-              <div class="project-links">
-                <a href="https://github.com" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.85rem;"><i class="fa-brands fa-github"></i> Code Base</a>
-              </div>
-            </div>
-          </div> -->
-
-          <!-- Project 6 -->
-          <!-- <div class="project-card-wrapper" data-category="cv" id="proj-synapseweb">
-            <div class="glass-card project-card">
-              <div style="font-size: 2.2rem; color: var(--accent-purple); margin-bottom: 1.2rem;">
-                <i class="fa-solid fa-diagram-project"></i>
-              </div>
-              <h3>Synapse Visualizer</h3>
-              <p>
-                A lightweight Electron dashboard displaying active kernel feature maps from live webcam processing streams. Helpful for verifying convolution filter patterns.
-              </p>
-              <div class="project-tags">
-                <span class="research-tag">Electron</span>
-                <span class="research-tag">Tensorflow.js</span>
-                <span class="research-tag">Node.js</span>
-              </div>
-              <div class="project-links">
-                <a href="https://github.com" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.85rem;"><i class="fa-brands fa-github"></i> Repository</a>
-              </div>
-            </div>
-          </div> -->
 
         </div>
       </div>
@@ -383,6 +288,7 @@
             img.src = shot.src;
             img.alt = shot.label;
             img.className = 'gallery-img';
+            img.loading = 'lazy';
             slide.appendChild(img);
 
             const label = document.createElement('div');
@@ -467,42 +373,6 @@
         // Scroll to top so modal is centered
         window.scrollTo(0, 0);
       }
-    });
-  </script>
-  <!-- Project Filter Inline Script -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const buttons = document.querySelectorAll('.filter-btn');
-      const cards = document.querySelectorAll('.project-card-wrapper');
-      
-      buttons.forEach(btn => {
-        btn.addEventListener('click', () => {
-          // Remove active classes
-          buttons.forEach(b => b.classList.remove('active'));
-          btn.classList.add('active');
-          
-          const filter = btn.getAttribute('data-filter');
-          
-          cards.forEach(card => {
-            if (filter === 'all' || card.getAttribute('data-category') === filter) {
-              card.style.display = 'block';
-              // Trigger reflow for transition
-              void card.offsetWidth;
-              card.style.opacity = '1';
-              card.style.transform = 'scale(1)';
-            } else {
-              card.style.opacity = '0';
-              card.style.transform = 'scale(0.95)';
-              // Delay setting display none until animation finishes
-              setTimeout(() => {
-                if (card.style.opacity === '0') {
-                  card.style.display = 'none';
-                }
-              }, 300);
-            }
-          });
-        });
-      });
     });
   </script>
 </body>

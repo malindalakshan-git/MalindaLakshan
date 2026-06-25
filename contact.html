@@ -5,6 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Get in touch with Malinda Lakshan for AI collaborations, research inquiries, or code questions. Send an encrypted message node.">
   <meta name="author" content="Malinda Lakshan">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23d80706'/%3E%3Ctext x='16' y='21' text-anchor='middle' fill='white' font-size='13' font-weight='bold' font-family='Arial'%3EML%3C/text%3E%3C/svg%3E">
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://malindalakshan.github.io/contact.html">
+  <meta property="og:title" content="Contact | Malinda Lakshan">
+  <meta property="og:description" content="Get in touch with Malinda Lakshan for AI collaborations, research inquiries, or code questions. Send an encrypted message node.">
+  <meta property="og:image" content="assets/malinda.jpeg">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="Contact | Malinda Lakshan">
+  <meta property="twitter:description" content="Get in touch with Malinda Lakshan for AI collaborations, research inquiries, or code questions.">
+  <meta property="twitter:image" content="assets/malinda.jpeg">
+
   <title>Contact | Malinda Lakshan</title>
   
   <link rel="stylesheet" href="css/styles.css">
@@ -13,6 +28,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+
+  <!-- Skip to Content Link -->
+  <a href="#main-content" class="skip-link">Skip to content</a>
 
   <!-- Scroll Progress Bar -->
   <div id="scroll-progress" class="scroll-progress-bar"></div>
@@ -51,7 +69,7 @@
   <!-- Mobile Nav Overlay -->
   <div class="nav-overlay" id="nav-overlay"></div>
 
-  <main style="z-index: 2; position: relative;">
+  <main id="main-content" style="z-index: 2; position: relative;">
     <section class="gradient-bg" style="min-height: calc(100vh - var(--nav-height) - 300px); display: flex; align-items: center; padding: 2rem 0;">
       <div class="container">
         <div style="text-align: center; margin-bottom: 4rem;">
@@ -87,7 +105,7 @@
             </div>
         
             <div class="glass-card float-card" style="padding: 1.5rem; display: flex; gap: 1.5rem; align-items: center;" id="vector-networks">
-              <div style="font-size: 1.8rem; color: #e60000; width: 50px; text-align: center;">
+              <div style="font-size: 1.8rem; color: var(--accent-cyan); width: 50px; text-align: center;">
                 <i class="fa-solid fa-code"></i>
               </div>
               <div>
@@ -104,12 +122,12 @@
             </div>
             
             <div class="glass-card float-card" style="padding: 1.5rem; display: flex; gap: 1.5rem; align-items: center;" id="vector-youtube">
-              <div style="font-size: 1.8rem; color: #ff0000; width: 50px; text-align: center;">
+              <div style="font-size: 1.8rem; color: var(--accent-purple); width: 50px; text-align: center;">
                   <i class="fa-brands fa-youtube"></i> 
               </div>
               <div>
                 <h4 style="margin-bottom: 0.2rem; font-size: 1rem;">YouTube</h4>
-                <a href="https://www.youtube.com/@Malindalakshan-q8s" target="_blank" style="color: #ff0000; text-decoration: none; font-weight: 500; transition: color 0.2s;" onmouseover="this.style.color='var(--accent-cyan)'" onmouseout="this.style.color='#ff0000'">
+                <a href="https://www.youtube.com/@Malindalakshan-q8s" target="_blank" style="color: var(--accent-purple); text-decoration: none; font-weight: 500; transition: color 0.2s;" class="youtube-link">
                   Malinda Lakshan
                 </a>
               </div>
@@ -155,7 +173,7 @@
                 <label for="contact-message" class="form-label">Message</label>
               </div>
               
-              <button type="submit" class="btn btn-primary" id="btn-submit" style="width: 100%; padding: 1rem; cursor: pointer;">
+              <button type="submit" class="btn btn-primary" id="btn-submit" style="width: 100%; padding: 1rem;">
               Send <i class="fa-regular fa-paper-plane"></i>
               </button>
             </form>
@@ -208,7 +226,7 @@
           <p>Subscribe to receive updates on my recent publications and code releases.</p>
           <form class="subscribe-form" action="https://api.web3forms.com/submit" method="POST">
             <input type="hidden" name="access_key" value="13e8e991-9d7e-4a86-88db-58048e05e40c">
-            <input type="hidden" name="subject" value="New Website Newsletter Subscriber!">
+            <input type="hidden" name="subject" value="New Newsletter Subscriber from Portfolio">
             <input type="checkbox" name="botcheck" style="display: none;">
             <input type="email" name="email" placeholder="your.email@gmail.com" class="subscribe-input" required aria-label="Email Address">
             <button type="submit" class="subscribe-btn" aria-label="Submit Subscription"><i class="fa-solid fa-paper-plane"></i></button>
