@@ -279,53 +279,70 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 9. 3D Card Tilt Effect
-  const tiltCards = document.querySelectorAll('.glass-card, .skill-card, .project-card, .project-node-card');
-  tiltCards.forEach(card => {
-    card.classList.add('tilt-card-inner');
-    const parent = document.createElement('div');
-    parent.className = 'tilt-card';
-    card.parentNode.insertBefore(parent, card);
-    parent.appendChild(card);
+  // 9. 3D Card Tilt Effect (disabled on touch devices)
+  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  if (!isTouchDevice) {
+    const tiltCards = document.querySelectorAll('.glass-card, .skill-card, .project-card, .project-node-card');
+    tiltCards.forEach(card => {
+      card.classList.add('tilt-card-inner');
+      const parent = document.createElement('div');
+      parent.className = 'tilt-card';
+      card.parentNode.insertBefore(parent, card);
+      parent.appendChild(card);
 
-    parent.addEventListener('mousemove', (e) => {
-      const rect = parent.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
-      const rotateX = ((y - centerY) / centerY) * -6;
-      const rotateY = ((x - centerX) / centerX) * 6;
-      card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
-    });
+      let ticking = false;
+      parent.addEventListener('mousemove', (e) => {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(() => {
+          const rect = parent.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+          const rotateX = ((y - centerY) / centerY) * -6;
+          const rotateY = ((x - centerX) / centerX) * 6;
+          card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+          ticking = false;
+        });
+      });
 
-    parent.addEventListener('mouseleave', () => {
-      card.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
+      parent.addEventListener('mouseleave', () => {
+        card.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
+      });
     });
-  });
+  }
 
-  // 10. Magnetic Button Effect
-  const magneticBtns = document.querySelectorAll('.btn-primary, .btn-secondary, .node-btn, .filter-btn');
-  magneticBtns.forEach(btn => {
-    btn.classList.add('magnetic-btn');
-    btn.addEventListener('mousemove', (e) => {
-      const rect = btn.getBoundingClientRect();
-      const x = e.clientX - rect.left - rect.width / 2;
-      const y = e.clientY - rect.top - rect.height / 2;
-      const dist = Math.sqrt(x * x + y * y);
-      const maxDist = 150;
-      if (dist < maxDist) {
-        const strength = 0.25;
-        const moveX = x * strength;
-        const moveY = y * strength;
-        btn.style.transform = `translate(${moveX}px, ${moveY}px)`;
-      }
-    });
+  // 10. Magnetic Button Effect (disabled on touch devices)
+  if (!isTouchDevice) {
+    const magneticBtns = document.querySelectorAll('.btn-primary, .btn-secondary, .node-btn, .filter-btn');
+    magneticBtns.forEach(btn => {
+      btn.classList.add('magnetic-btn');
+      let ticking = false;
+      btn.addEventListener('mousemove', (e) => {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(() => {
+          const rect = btn.getBoundingClientRect();
+          const x = e.clientX - rect.left - rect.width / 2;
+          const y = e.clientY - rect.top - rect.height / 2;
+          const dist = Math.sqrt(x * x + y * y);
+          const maxDist = 150;
+          if (dist < maxDist) {
+            const strength = 0.25;
+            const moveX = x * strength;
+            const moveY = y * strength;
+            btn.style.transform = `translate(${moveX}px, ${moveY}px)`;
+          }
+          ticking = false;
+        });
+      });
 
-    btn.addEventListener('mouseleave', () => {
-      btn.style.transform = '';
+      btn.addEventListener('mouseleave', () => {
+        btn.style.transform = '';
+      });
     });
-  });
+  }
 
   // 11. Page Transitions
   const transitionOverlay = document.createElement('div');

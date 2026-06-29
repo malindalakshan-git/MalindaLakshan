@@ -11,6 +11,7 @@ class NeuralNetworkBackdrop {
     this.ctx = this.canvas.getContext('2d');
     this.particles = [];
     this.mouse = { x: null, y: null, radius: 150 };
+    this.rafId = null;
     
     // Config
     this.maxParticles = 80;
@@ -70,9 +71,24 @@ class NeuralNetworkBackdrop {
       this.mouse.x = null;
       this.mouse.y = null;
     });
+    
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        if (this.rafId) {
+          cancelAnimationFrame(this.rafId);
+          this.rafId = null;
+        }
+      } else {
+        this.animate();
+      }
+    });
   }
   
   animate() {
+    if (document.hidden) {
+      this.rafId = requestAnimationFrame(() => this.animate());
+      return;
+    }
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
     
     // Update and draw particles
@@ -155,7 +171,7 @@ class NeuralNetworkBackdrop {
       }
     }
     
-    requestAnimationFrame(() => this.animate());
+    this.rafId = requestAnimationFrame(() => this.animate());
   }
 }
 
